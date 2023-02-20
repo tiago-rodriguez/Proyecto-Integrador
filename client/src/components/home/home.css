@@ -1,0 +1,17 @@
+.home_bg {
+  background-image: url("./imageCasa.png");
+  background-image: fixed;
+  height: 91.5vh;
+  background-size: cover;
+  margin-left: 500px;
+}
+
+.home_bg_dos {
+  background-color: #fe4236;
+  background-repeat: no-repeat;
+}
+
+.imagen {
+  margin-top: 35px;
+  margin-left: 425px;
+}

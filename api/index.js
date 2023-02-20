@@ -8,16 +8,21 @@ const db = require("./config/db");
 const envs = require("./config/envs");
 
 const authAPI = require("./routes");
+const cors = require("cors");
+const volleyball = require("volleyball");
 
 app.use(express.static(path.resolve(__dirname, "public")));
-
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
+app.use(volleyball);
 
 app.use("/api", authAPI);
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
 //conexion a una db
 db.sync({ force: false }).then(() => {
   console.log("Db connected");

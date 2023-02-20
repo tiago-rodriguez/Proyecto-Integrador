@@ -14,11 +14,11 @@ class User extends Sequelize.Model {
 }
 User.init(
   {
-    name: {
+    nombre: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    lastname: {
+    apellido: {
       type: Sequelize.STRING,
       allowNull: false,
     },
@@ -33,14 +33,15 @@ User.init(
       type: Sequelize.STRING,
       allowNull: false,
     },
-    country: {
+
+    cellPhone: {
       type: Sequelize.STRING,
       allowNull: false,
     },
+
     admin: {
       type: Sequelize.BOOLEAN,
       defaultValue: false,
-      allowNull: false,
     },
   },
   {

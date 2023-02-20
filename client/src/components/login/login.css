@@ -1,0 +1,13 @@
+body,
+html {
+  height: 100%;
+}
+.bg {
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).webp");
+  background-image: fixed;
+  height: 91.5vh;
+  background-size: cover;
+}
+.size {
+  padding: 45px;
+}

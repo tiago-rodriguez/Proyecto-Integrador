@@ -1,7 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const Users = require("../models/users");
-const { generateToken, validateToken } = require("../config/token");
+const { generateToken } = require("../config/token");
+const { validateUser, validateAdmin } = require("../middlewares/auth");
+
+router.get("/test", (req, res) => {
+  console.log("aparece el test");
+  res.send("Test string");
+});
+
+router.post("/allUsers", validateAdmin, (req, res) => {
+  Users.findAll().then((users) => {
+    res.status(200).send(users);
+  });
+});
 
 //http://localhost:3001/api/users/register
 
@@ -10,8 +22,6 @@ router.post("/register", (req, res) => {
     res.status(201).send(user);
   });
 });
-
-module.exports = router;
 
 //http://localhost:3001/api/users/login
 
@@ -28,23 +38,29 @@ router.post("/login", (req, res) => {
 
       const payload = {
         email: user.email,
-        name: user.name,
-        lastname: user.lastname,
+        nombre: user.nombre,
+        apellido: user.apellido,
+        admin: user.admin,
       };
 
       const token = generateToken(payload); //Devuelve un token
-
-      res.cookie("token", token);
-
-      res.send(payload);
+      //res.cookie("token", token);
+      res.send([payload, token]);
     });
   });
 
-  router.get("/me", (req, res) => {
-    const token = req.cookies.token;
+  router.post("/me", validateUser, (req, res) => {
+    res.send(req.user);
+  });
 
-    const { user } = validateToken(token);
+  //Apartir de aca son Rutas Admin.
 
-    res.send(user);
+  router.delete("/delete/:id", validateAdmin, (req, res) => {
+    const id = req.params.id;
+    Users.destroy({ where: { id } })
+      .then(() => res.status(204).send("Deleted User"))
+      .catch((err) => res.status(400).send(err));
   });
 });
+
+module.exports = router;
