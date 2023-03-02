@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Divino 3 Ambientes en Alvear Tower - Puerto Madero",
+    "operation": "Alquiler",
+    "adress": "Azucena Villaflor 500",
+    "rooms": " 2 Habitaciones",
+    "price": "4550",
+    "bathrooms": " 2 Baños",
+    "environments": " 3 Ambientes",
+    "category": "Departamento",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus dicta suscipit incidunt blanditiis laboriosam facere recusandae voluptatum vel veritatis modi?",
+    "available": true,
+    "city": "Capital Federal",
+    "image": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/04/61/79/1200x1200/1821584328.jpg",
+    "locate": "Puerto Madero",
+    "country": "Argentina",
+    "meters": "80m²"
+  },
+  {
+    "title": "Divino 3 Ambientes en Alvear Tower - Puerto Madero",
+    "operation": "Alquiler",
+    "adress": "Azucena Villaflor 500",
+    "rooms": 2,
+    "price": "4550",
+    "bathrooms": 2,
+    "environments": 3,
+    "category": "Departamento",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus dicta suscipit incidunt blanditiis laboriosam facere recusandae voluptatum vel veritatis modi?",
+    "available": true,
+    "city": "Capital Federal",
+    "image": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/04/61/79/1200x1200/1821584328.jpg",
+    "locate": "Puerto Madero",
+    "country": "Argentina",
+    "meters": "80m²"
+  }
+]

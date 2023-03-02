@@ -69,7 +69,7 @@ const Register = () => {
         navigate("/login");
         console.log("Usuario creado con exito");
       } catch (error) {
-        console.log("MUCHACHERR");
+        console.log(error);
       }
     }
   };

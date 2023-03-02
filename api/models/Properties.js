@@ -5,41 +5,54 @@ class Properties extends Sequelize.Model {}
 
 Properties.init(
   {
-    nombre_del_propietario: {
+    title: {
       type: Sequelize.STRING,
       allowNull: false,
     },
 
-    owner_contact: {
+    operation: {
       type: Sequelize.STRING,
       allowNull: false,
+    },
+
+    adress: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+
+    rooms: {
+      type: Sequelize.STRING,
     },
 
     price: {
-      type: Sequelize.INTEGER,
-      allowNull: false,
-    },
-    bathrooms: {
-      type: Sequelize.INTEGER,
-    },
-    enviroments: {
-      type: Sequelize.INTEGER,
-    },
-    password: {
       type: Sequelize.STRING,
       allowNull: false,
     },
+    bathrooms: {
+      type: Sequelize.STRING,
+    },
+    enviroments: {
+      type: Sequelize.STRING,
+    },
     category: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING,
       allowNull: false,
     },
     description: {
       type: Sequelize.TEXT,
+      allowNull: false,
+    },
+    available: {
+      type: Sequelize.BOOLEAN,
+    },
+
+    city: {
+      type: Sequelize.STRING,
+      allowNull: false,
     },
 
     image: {
-      type: Sequelize.ARRAY(Sequelize.STRING),
-      defaultValue: [],
+      type: Sequelize.TEXT,
     },
 
     locate: {
@@ -47,9 +60,13 @@ Properties.init(
       allowNull: false,
     },
 
-    meters: {
-      type: Sequelize.INTEGER,
+    country: {
+      type: Sequelize.STRING,
       allowNull: false,
+    },
+
+    meters: {
+      type: Sequelize.STRING,
     },
   },
   {

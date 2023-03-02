@@ -8,7 +8,7 @@ import axios from "axios";
 import { setUser } from "./store/user";
 import NaView from "./components/navbar/Navbar";
 import Profile from "./components/profile/profile";
-import Alquiler from "./components/alquiler/Alquiler";
+import Cards from "./components/cards/Cards";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/alquiler" element={<Alquiler />} />
+        <Route path="/alquiler" element={<Cards />} />
       </Routes>
     </>
   );

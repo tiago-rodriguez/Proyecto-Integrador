@@ -36,7 +36,6 @@ User.init(
 
     cellPhone: {
       type: Sequelize.STRING,
-      allowNull: false,
     },
 
     admin: {
