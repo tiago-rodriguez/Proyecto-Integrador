@@ -53,6 +53,7 @@ router.post("/login", (req, res) => {
   //ruta para mostrar todos los usuarios siendo admin
   router.post("/allUsers", validateAdmin, (req, res) => {
     Users.findAll().then((users) => {
+      console.log(users);
       res.status(200).send(users);
     });
   });

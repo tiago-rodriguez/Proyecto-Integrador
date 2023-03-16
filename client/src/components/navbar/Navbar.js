@@ -294,7 +294,7 @@ const NaView = () => {
 
                     <li class="nav-item">
                       <Nav className="me-auto">
-                        <Nav.Link href="/">
+                        <Nav.Link href="/usersView">
                           <div className="list_item text-white ">
                             Ver perfiles
                           </div>

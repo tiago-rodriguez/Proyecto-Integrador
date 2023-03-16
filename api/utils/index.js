@@ -20,7 +20,20 @@ const array = [
     price: " 45.509 ARGS",
     image:
       "https://imgar.zonapropcdn.com/avisos/1/00/49/30/94/03/360x266/1799091787.jpg",
+
+    image_2:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/70/50/360x266/1858970312.jpg",
+
+    image_3:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/70/50/360x266/1858970308.jpg",
+
+    image_4:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/70/50/360x266/1858970311.jpg",
+
+    image_5:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/70/50/360x266/1858970330.jpg",
   },
+
   {
     title: "Venta. 4 Ambientes. Cochera. French y Anchorena.",
     adress: "French 2600",
@@ -37,7 +50,19 @@ const array = [
     operation: " Venta",
     price: " 200.000 USD",
     image:
-      "https://imgar.zonapropcdn.com/avisos/1/00/50/57/88/67/360x266/1838666215.jpg",
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/09/22/360x266/1858842165.jpg",
+
+    image_2:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/09/22/360x266/1858842155.jpg",
+
+    image_3:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/09/22/360x266/1858842199.jpg",
+
+    image_4:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/09/22/360x266/1858842197.jpg",
+
+    image_5:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/09/22/360x266/1858842159.jpg",
   },
   {
     title: "French 2600 y Anchorena: Lindisimo con Balcon",
@@ -56,7 +81,19 @@ const array = [
     operation: "Alquiler",
     price: "60.700 ARGS",
     image:
-      "https://imgar.zonapropcdn.com/avisos/1/00/50/70/63/46/360x266/1841585167.jpg",
+      "https://imgar.zonapropcdn.com/avisos/1/00/47/80/59/28/360x266/1850794902.jpg",
+
+    image_2:
+      "https://imgar.zonapropcdn.com/avisos/1/00/47/80/59/28/360x266/1850794887.jpg",
+
+    image_3:
+      "https://imgar.zonapropcdn.com/avisos/1/00/47/80/59/28/360x266/1850794898.jpg",
+
+    image_4:
+      "https://imgar.zonapropcdn.com/avisos/1/00/47/80/59/28/360x266/1850794896.jpg",
+
+    image_5:
+      "https://imgar.zonapropcdn.com/avisos/1/00/47/80/59/28/360x266/1850794886.jpg",
   },
   {
     title: "Departamento · 51m² · 2 Ambientes ",
@@ -65,7 +102,7 @@ const array = [
     country: "Argentina",
     locate: "Palermo",
     description:
-      "Espectacular 2 ambientes TOTALMENTE AMOBLADO, a estrenar en el Complejo Vitta Carranza en PalermoEdificio de 9 pisos, departamento con cochera y baulera.Dormitorio en suite - VestidorToilette de recepciónGRAN BALCON CON JARDIN!!!Seguridad presencial las 24 hsCalefacción individual por losa radianteNo apto mascotasAmenities AAA: Piscina externa - SUM - Gimnasio - Business Center - Jardín - Acceso a cocheras por rampa - LoundryPara los casos de alquiler de vivienda, el monto máximo de comisión que se le puede requerir a los propietarios será el equivalente al cuatro con quince centésimos por ciento (4,15%) del valor total del respectivo contrato. Se encuentra prohibido cobrar a los inquilinos que sean personas físicas comisiones inmobiliarias y gastos de gestoría de informes (incorporado como inciso 8 del artículo 10 de la Ley 2340).Tenga en cuenta que la nueva ley de alquileres N° 27.551 no deroga las leyes de cada jurisdicción respecto de los honorarios que pueden percibirse. Además le hacemos saber que el IVC, está monitoreando todas las publicaciones y está realizando denuncias en nuestra Institución, que son pasibles de sanción.Las descripciones, medidas, superficies y proporciones consignadas en esta ficha son aproximadas, sólo se muestran a modo orientativo.Matriculado CUCICBA N°923",
+      "Espectacular 2 ambientes TOTALMENTE AMOBLADO, a estrenar en el Complejo Vitta Carranza en PalermoEdificio de 9 pisos, departamento con cochera y baulera.Dormitorio en suite - VestidorToilette de recepciónGRAN BALCON CON JARDIN!!!Seguridad presencial las 24 hsCalefacción individual por losa radianteNo apto mascotasAmenities ",
     available: false,
     meters: "63m²",
     rooms: " 2 Ambientes",
@@ -75,7 +112,19 @@ const array = [
     operation: "Alquiler",
     price: "4550 USD",
     image:
-      "https://imgar.zonapropcdn.com/avisos/1/00/51/17/32/37/360x266/1855648097.jpg",
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/26/18/72/360x266/1857539861.jpg",
+
+    image_2:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/26/18/72/360x266/1857539855.jpg",
+
+    image_3:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/26/18/72/360x266/1857539863.jpg",
+
+    image_4:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/26/18/72/360x266/1857539853.jpg",
+
+    image_5:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/26/18/72/360x266/1857539854.jpg",
   },
   {
     title:
@@ -95,7 +144,19 @@ const array = [
     operation: "Alquiler",
     price: "750 USD",
     image:
-      "https://imgar.zonapropcdn.com/avisos/1/00/51/20/17/88/360x266/1856206421.jpg",
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/44/95/360x266/1858917896.jpg",
+
+    image_2:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/44/95/360x266/1858917899.jpg",
+
+    image_3:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/44/95/360x266/1858917894.jpg",
+
+    image_4:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/44/95/360x266/1858917897.jpg",
+
+    image_5:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/32/44/95/360x266/1858917898.jpg",
   },
 
   {
@@ -115,7 +176,114 @@ const array = [
     operation: "Alquiler",
     price: "950 USD + $ 45.000 Expensas",
     image:
-      "https://imgar.zonapropcdn.com/avisos/1/00/50/60/77/27/360x266/1838510919.jpg",
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/30/03/45/360x266/1858377553.jpg",
+
+    image_2:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/30/03/45/360x266/1858377555.jpg",
+
+    image_3:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/30/03/45/360x266/1858377554.jpg",
+
+    image_4:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/30/03/45/360x266/1858377568.jpg",
+
+    image_5:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/30/03/45/360x266/1858377630.jpg",
+  },
+
+  {
+    title: "Departamento en Av.Libertador al 2000",
+    adress: "Av.Libertador al 2000",
+    city: "Buenos Aires",
+    country: "Argentina",
+    locate: "Palermo",
+    description: "Lindísimo departamento en pleno palermo. ",
+    available: false,
+    meters: "175m²",
+    rooms: " 4 Ambientes",
+    bathrooms: " 2 Baños",
+    enviroments: " 3 Habitaciones",
+    category: "Departamento",
+    operation: "Alquiler",
+    price: "1700 USD + $ 45.000 Expensas",
+    image:
+      "https://imgar.zonapropcdn.com/avisos/1/00/50/62/51/28/360x266/1838982325.jpg",
+
+    image_2:
+      "https://imgar.zonapropcdn.com/avisos/1/00/50/62/51/28/360x266/1855573310.jpg",
+
+    image_3:
+      "https://imgar.zonapropcdn.com/avisos/1/00/50/62/51/28/360x266/1838982333.jpg",
+
+    image_4:
+      "https://imgar.zonapropcdn.com/avisos/1/00/50/62/51/28/360x266/1855329697.jpg",
+
+    image_5:
+      "https://imgar.zonapropcdn.com/avisos/1/00/50/62/51/28/360x266/1838982337.jpg",
+  },
+
+  {
+    title: "Monoambiente",
+    adress: "Junin al 969",
+    city: "Buenos Aires",
+    country: "Argentina",
+    locate: "Recoleta",
+    description:
+      "-Cómodo Studio ideal para 1 o 2 personas, ubicado en una de las zonas mas lindas de Buenos Aires;.",
+    available: false,
+    meters: "36m²",
+    rooms: " 1 Ambiente",
+    bathrooms: " 1 Baño",
+    enviroments: " --",
+    category: "Departamento",
+    operation: "Venta",
+    price: "210.000 ARGS",
+    image:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/18/14/05/360x266/1855824186.jpg",
+
+    image_2:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/18/14/05/360x266/1855824170.jpg",
+
+    image_3:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/18/14/05/360x266/1855824169.jpg",
+
+    image_4:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/18/14/05/360x266/1855824185.jpg",
+
+    image_5:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/18/14/05/360x266/1855824171.jpg",
+  },
+
+  {
+    title: "Monoambiente en San nicolas",
+    adress: "Maipu 216",
+    city: "Buenos Aires",
+    country: "Argentina",
+    locate: "San nicolas",
+    description:
+      "Comodo y espacioso Departamento de 1 ambiente ideal para 2 o 3 personas, ubicado en el centro de Buenos Aires; ¡En el Barrio de Congreso! El mismo queda sobre la calle Maipú entre Tte. Gral. Juan Domingo Perón y Sarmiento",
+    available: false,
+    meters: "32m²",
+    rooms: " 1 Ambiente",
+    bathrooms: " 1 Baño",
+    enviroments: " --",
+    category: "Departamento",
+    operation: "Venta",
+    price: "140.000 ARGS",
+    image:
+      "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/97/94/14/1200x1200/1858186020.jpg",
+
+    image_2:
+      "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/97/94/14/1200x1200/1858186014.jpg",
+
+    image_3:
+      "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/97/94/14/1200x1200/1858186007.jpg",
+
+    image_4:
+      "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/97/94/14/1200x1200/1858186019.jpg",
+
+    image_5:
+      "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/97/94/14/1200x1200/1858186018.jpg",
   },
 ];
 

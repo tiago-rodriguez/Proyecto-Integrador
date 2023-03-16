@@ -10,12 +10,12 @@ import NaView from "./components/navbar/Navbar";
 import Profile from "./components/profile/profile";
 import Cards from "./components/cards/Cards";
 import Search from "./components/search/Search";
+import UserList from "./components/userlist/Userlist";
 
 function App() {
   const [properties, setProperties] = useState([]);
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
-  const [input, setInput] = useState("");
 
   useEffect(() => {
     if (search === "") {
@@ -58,6 +58,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/propiedades" element={<Cards />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/usersView" element={<UserList />} />
       </Routes>
     </>
   );
