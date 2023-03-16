@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Properties = require("../models/Properties");
-const { validateAdmin } = require("../middlewares/auth");
+const { validateAdmin, validateUser } = require("../middlewares/auth");
 const { Sequelize } = require("sequelize");
 const Op = Sequelize.Op;
 
@@ -10,6 +10,14 @@ const Op = Sequelize.Op;
 router.post("/create", validateAdmin, (req, res) => {
   Properties.create(req.body).then((property) => {
     res.status(201).send(property);
+  });
+});
+
+//http://localhost:3001/api/properties/all
+
+router.get("/all", (req, res) => {
+  Properties.findAll().then((property) => {
+    res.status(200).send(property);
   });
 });
 
@@ -22,27 +30,40 @@ router.get("/:id", (req, res) => {
   });
 });
 
+router.get("/search/:category", (req, res) => {
+  const { category } = req.params;
+  const search = category.toLowerCase();
+  Property.findAll({
+    where: {
+      [Op.or]: [{ category: search }, { city: search }, { country: search }],
+    },
+  }).then((search) => res.send(search));
+});
+
 //BUSCADOR
 //http://localhost:3001/api/properties/search/:title
 
-router.get("/search/:title", (req, res) => {
-  const { title } = req.params;
-  const lower = title.toLowerCase();
+/*
+router.post("/search", (req, res) => {
+  const { search } = req.body;
+  const lower = search.toLowerCase();
   Properties.findAll({
     where: {
+      //adress: { [Op.iLike]: `%${lower}%` },
       title: { [Op.iLike]: `%${lower}%` },
     },
-  }).then((search) => {
-    res.send(search);
+  }).then((searched) => {
+    res.send(searched);
   });
 });
+*/
 
 //FILTRO POR AMBIENTES
-//http://localhost:3001/api/properties/filter/:environments
+//http://localhost:3001/api/properties/enviroments/:environments
 
-router.get("/environments/:environments", (req, res) => {
-  const { environments } = req.params;
-  Properties.findAll({ where: { environments: environments } })
+router.get("/enviroments/:enviroments", (req, res) => {
+  const enviroments = req.params.enviroments;
+  Properties.findAll({ where: { enviroments: enviroments } })
     .then((filter) => {
       res.send(filter);
     })
@@ -62,11 +83,40 @@ router.post("/price", (req, res) => {
     .catch((error) => console.log(error));
 });
 
+//CREA TODAS LAS PROPIEDADES
+//http://localhost:3001/api/properties/getAllProperties
+
 router.post("/getAllProperties", (req, res) => {
   Properties.findAll().then((property) => {
     console.log(property);
     res.status(200).send(property);
   });
+});
+
+//AGREGAR A FAVORITOS
+//http://localhost:3001/api/properties/addFavorites
+
+router.post("/addFavorites", validateUser, (req, res) => {
+  const { id } = req.body;
+  Properties.findByPk(id)
+    .then((property) => {
+      property.setUsers(req.user.id);
+      res.status(201).send(property);
+    })
+    .catch((error) => console.log(error));
+});
+
+//ELIMINAR DE FAVORITOS
+//http://localhost:3001/api/properties/deleteFavorites/:id
+
+router.post("/deleteFavorites/:id", validateUser, (req, res) => {
+  const { id } = req.params;
+  Properties.findByPk(id)
+    .then((property) => {
+      property.removeUsers(req.user.id);
+      res.status(204).send(property);
+    })
+    .catch((error) => console.log(error));
 });
 
 module.exports = router;

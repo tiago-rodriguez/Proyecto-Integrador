@@ -1,10 +1,15 @@
 import React from "react";
 import "./cards.css";
+import Carousel from "react-bootstrap/Carousel";
 
 //Props es un objeto que lo desestructuro
 function Card({
   title,
   image,
+  image_2,
+  image_3,
+  image_4,
+  image_5,
   price,
   bathrooms,
   description,
@@ -20,8 +25,36 @@ function Card({
 }) {
   return (
     <div className="card">
-      <img src={image} alt="" />
       <div className="card-body">
+        <Carousel>
+          <Carousel.Item>
+            <img className="d-block w-100 " src={image} alt="..." />
+            <Carousel.Caption></Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={image_2} alt="..." />
+
+            <Carousel.Caption></Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={image_3} alt="..." />
+
+            <Carousel.Caption></Carousel.Caption>
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <img className="d-block w-100" src={image_4} alt="..." />
+
+            <Carousel.Caption></Carousel.Caption>
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <img className="d-block w-100" src={image_5} alt="..." />
+
+            <Carousel.Caption></Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+
         <h4 className="card-title">{title}</h4>
 
         <p>
@@ -104,7 +137,7 @@ function Card({
             >
               <path d="M96 77.3c0-7.3 5.9-13.3 13.3-13.3c3.5 0 6.9 1.4 9.4 3.9l14.9 14.9C130 91.8 128 101.7 128 112c0 19.9 7.2 38 19.2 52c-5.3 9.2-4 21.1 3.8 29c9.4 9.4 24.6 9.4 33.9 0L289 89c9.4-9.4 9.4-24.6 0-33.9c-7.8-7.9-19.8-9.1-29-3.8C246 39.2 227.9 32 208 32c-10.3 0-20.2 2-29.2 5.5L163.9 22.6C149.4 8.1 129.7 0 109.3 0C66.6 0 32 34.6 32 77.3V256c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H96V77.3zM32 352v16c0 28.4 12.4 54 32 71.6V480c0 17.7 14.3 32 32 32s32-14.3 32-32V464H384v16c0 17.7 14.3 32 32 32s32-14.3 32-32V439.6c19.6-17.6 32-43.1 32-71.6V352H32z" />
             </svg>
-            {bathrooms}
+            Baños :{bathrooms}
           </h6>
         </p>
 
@@ -124,8 +157,7 @@ function Card({
             >
               <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
             </svg>
-
-            {enviroments}
+            Ambientes: {enviroments}
           </h6>
         </p>
 
@@ -141,7 +173,7 @@ function Card({
             >
               <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
             </svg>
-            {rooms}
+            Habitaciónes{rooms}
           </h6>
         </p>
 
@@ -193,9 +225,6 @@ function Card({
             </svg>
             {price}
           </h6>
-          <button type="button" class="btn btn-info">
-            Ver más
-          </button>
         </div>
         <div className="favoritos">
           <button type="button" class="btn btn-info">

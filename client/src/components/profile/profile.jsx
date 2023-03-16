@@ -52,6 +52,10 @@ const Profile = () => {
                     <p class="font-weight-bold">Celular:</p>
                     <h6 class="text-muted">{user.cellPhone}</h6>
                   </div>
+                  <div class="col-sm-6">
+                    <p class="font-weight-bold">Admin:</p>
+                    <h6 class="text-muted">{user.admin}</h6>
+                  </div>
                 </div>
               </div>
             </div>

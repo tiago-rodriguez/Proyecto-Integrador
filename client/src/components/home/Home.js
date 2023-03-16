@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
-import GroupOfDev from "./GroupOfDev.png";
+import axios from "axios";
+import { useDispatch } from "react-redux";
 
 function Home() {
   return (
     <div className="home_bg_dos">
       <div className="home_bg">
-        <div className="border-solid">
-          <img className="imagen" src={GroupOfDev} />
-        </div>
+        <div className="border-solid "></div>
       </div>
     </div>
   );

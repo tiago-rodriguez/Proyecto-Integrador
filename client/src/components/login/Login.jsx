@@ -69,7 +69,7 @@ const Login = () => {
         navigate("/home");
         console.log("Usuario logueado con exito", field.email);
       } catch (error) {
-        console.log("ERROR");
+        console.log("ERROR DE USUARIO Y/O CONTRASEÑA");
       }
     }
   };

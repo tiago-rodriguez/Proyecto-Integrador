@@ -9,12 +9,6 @@ router.get("/test", (req, res) => {
   res.send("Test string");
 });
 
-router.post("/allUsers", validateAdmin, (req, res) => {
-  Users.findAll().then((users) => {
-    res.status(200).send(users);
-  });
-});
-
 //http://localhost:3001/api/users/register
 
 router.post("/register", (req, res) => {
@@ -40,6 +34,7 @@ router.post("/login", (req, res) => {
         email: user.email,
         nombre: user.nombre,
         apellido: user.apellido,
+        cellPhone: user.cellPhone,
         admin: user.admin,
       };
 
@@ -54,6 +49,13 @@ router.post("/login", (req, res) => {
   });
 
   //Apartir de aca son Rutas Admin.
+
+  //ruta para mostrar todos los usuarios siendo admin
+  router.post("/allUsers", validateAdmin, (req, res) => {
+    Users.findAll().then((users) => {
+      res.status(200).send(users);
+    });
+  });
 
   router.delete("/delete/:id", validateAdmin, (req, res) => {
     const id = req.params.id;

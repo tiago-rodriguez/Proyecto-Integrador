@@ -2,6 +2,22 @@
   background-color: #fe4236;
 }
 
+.barrita {
+  background-color: #123ac8;
+}
+
+.contenedor_usuario {
+  margin-left: 50px;
+}
+
+.contenedor_vista_perfiles {
+  margin-left: 50px;
+}
+
+.boton_cerrar_sesion {
+  margin-left: 70px;
+}
+
 .brand,
 .list_item {
   text-decoration: none;

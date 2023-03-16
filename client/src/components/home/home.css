@@ -1,17 +1,15 @@
 .home_bg {
-  background-image: url("./imageCasa.png");
+  background-image: url("./Group_191.png");
   background-image: fixed;
   height: 91.5vh;
   background-size: cover;
   margin-left: 500px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .home_bg_dos {
   background-color: #fe4236;
   background-repeat: no-repeat;
-}
-
-.imagen {
-  margin-top: 35px;
-  margin-left: 425px;
+  max-width: 100%;
 }
