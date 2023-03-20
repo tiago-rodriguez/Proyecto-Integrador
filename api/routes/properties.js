@@ -30,6 +30,7 @@ router.get("/:id", (req, res) => {
   });
 });
 
+/*
 router.get("/search/:category", (req, res) => {
   const { category } = req.params;
   const search = category.toLowerCase();
@@ -39,11 +40,11 @@ router.get("/search/:category", (req, res) => {
     },
   }).then((search) => res.send(search));
 });
+*/
 
 //BUSCADOR
 //http://localhost:3001/api/properties/search/:title
 
-/*
 router.post("/search", (req, res) => {
   const { search } = req.body;
   const lower = search.toLowerCase();
@@ -56,7 +57,6 @@ router.post("/search", (req, res) => {
     res.send(searched);
   });
 });
-*/
 
 //FILTRO POR AMBIENTES
 //http://localhost:3001/api/properties/enviroments/:environments

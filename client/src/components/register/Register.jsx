@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { isValidElement, useState } from "react";
 import axios from "axios";
 import FormContainer from "../navbar/FormContainer";
 import { Form, Button } from "react-bootstrap";
@@ -44,10 +44,10 @@ const Register = () => {
 
     if (!apellido || apellido === "")
       newErrors.apellido = "Porfavor ingresa tu apellido";
-    if (!password || password === "")
+    if (!password || password === "" || password.length <= 6)
       newErrors.password = "La contraseña debe tener almenos 6 caracteres";
     if (!email || email === "") newErrors.email = "Porfavor ingresa tu email";
-    if (!cellPhone || cellPhone === "")
+    if (!cellPhone || cellPhone === "" || cellPhone.length <= 9)
       newErrors.cellPhone = "Porfavor ingrese un numero de celular válido";
 
     return newErrors;
@@ -119,6 +119,7 @@ const Register = () => {
                 onChange={handleInput}
                 isInvalid={!!errors.password}
               />
+
               <Form.Control.Feedback type="invalid">
                 {errors.password}
               </Form.Control.Feedback>
@@ -128,7 +129,7 @@ const Register = () => {
               <Form.Label>Celular</Form.Label>
               <Form.Control
                 name="cellPhone"
-                type="text"
+                type="tel"
                 required
                 value={form.cellPhone}
                 onChange={handleInput}

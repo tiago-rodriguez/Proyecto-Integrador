@@ -2,17 +2,17 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { useState } from "react";
+//import { useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/esm/Button";
 import Container from "react-bootstrap/esm/Container";
 
-function viewAdminUsers() {
+function ViewAdminUsers() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/api/users/allUsers", {
+      .get("http://localhost:3001/api/users/getAllUsers", {
         withCredentials: true,
       })
       .then((res) => setUsers(res.data))
@@ -43,4 +43,4 @@ function viewAdminUsers() {
     </Container>
   );
 }
-export default viewAdminUsers;
+export default ViewAdminUsers;

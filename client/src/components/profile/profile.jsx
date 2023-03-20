@@ -32,7 +32,7 @@ const Profile = () => {
                 </div>
               </div>
               <div class="col-sm-8 bg-light rounded-right ">
-                <h3 class="mt-3 text-center"> Informacion del Usuario </h3>
+                <h3 class="mt-3 text-center"> Información del Usuario </h3>
                 <hr class="badge-primary mt-0 w-25"></hr>
                 <div class="row">
                   <div class="col-sm-6">
@@ -51,10 +51,6 @@ const Profile = () => {
                   <div class="col-sm-6">
                     <p class="font-weight-bold">Celular:</p>
                     <h6 class="text-muted">{user.cellPhone}</h6>
-                  </div>
-                  <div class="col-sm-6">
-                    <p class="font-weight-bold">Admin:</p>
-                    <h6 class="text-muted">{user.admin}</h6>
                   </div>
                 </div>
               </div>
