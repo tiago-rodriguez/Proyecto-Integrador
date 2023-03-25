@@ -30,17 +30,14 @@ router.get("/:id", (req, res) => {
   });
 });
 
-/*
-router.get("/search/:category", (req, res) => {
-  const { category } = req.params;
-  const search = category.toLowerCase();
-  Property.findAll({
-    where: {
-      [Op.or]: [{ category: search }, { city: search }, { country: search }],
-    },
-  }).then((search) => res.send(search));
+//BORRA LA PROPIEDAD
+//http://localhost:3001/api/properties/:id
+router.delete("/:id", validateAdmin, (req, res) => {
+  const id = req.params.id;
+  Properties.destroy({ where: { id } })
+    .then(() => res.status(204).send("Propiedad eliminada"))
+    .catch((err) => res.status(400).send(err));
 });
-*/
 
 //BUSCADOR
 //http://localhost:3001/api/properties/search/:title

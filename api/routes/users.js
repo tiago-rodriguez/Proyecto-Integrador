@@ -11,6 +11,8 @@ router.get("/test", (req, res) => {
 
 //http://localhost:3001/api/users/register
 
+//Este código crea un nuevo usuario en una base de datos un POST a la ruta "/register" en el servidor.
+
 router.post("/register", (req, res) => {
   Users.create(req.body).then((user) => {
     res.status(201).send(user);
@@ -18,7 +20,11 @@ router.post("/register", (req, res) => {
 });
 
 //http://localhost:3001/api/users/login
-
+/*//Esta ruta permite a un usuario autenticarse en el sistema proporcionando su correo electrónico
+ y contraseña en respuesta a una solicitud POST. Si la autenticación tiene 
+ éxito, la ruta devuelve un token JWT y una carga útil de información del usuario. Si 
+ la autenticación falla, la ruta devuelve un código de estado 401 (No autorizado).
+ */
 //Uso el User para traer datos del modelo de usuario
 router.post("/login", (req, res) => {
   const { email, password } = req.body;
@@ -39,10 +45,12 @@ router.post("/login", (req, res) => {
       };
 
       const token = generateToken(payload); //Devuelve un token
-      //res.cookie("token", token);
       res.send([payload, token]);
     });
   });
+
+  /*validateUser verifica si el usuario que realiza la solicitud está autenticado.
+  Esta ruta permite a un usuario autenticado obtener su propio objeto user en respuesta a una solicitud POST.*/
 
   router.post("/me", validateUser, (req, res) => {
     res.send(req.user);
@@ -50,6 +58,7 @@ router.post("/login", (req, res) => {
 
   //Apartir de aca son Rutas Admin.
 
+  //Probar con params
   //ruta para mostrar todos los usuarios siendo admin
   router.post("/getAllUsers", (req, res) => {
     Users.findAll().then((users) => {
@@ -58,6 +67,9 @@ router.post("/login", (req, res) => {
     });
   });
 
+  /*Esta ruta identificara al usuario por id para luego eliminarlo de la DB,
+   La función llama al método destroy pasando un objeto que indica que se debe eliminar el usuario con el ID coincidente
+   */
   router.delete("/delete/:id", validateAdmin, (req, res) => {
     const id = req.params.id;
     Users.destroy({ where: { id } })

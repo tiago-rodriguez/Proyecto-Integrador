@@ -1,9 +1,31 @@
 import axios from "axios";
-import "./userlist.css";
+import "../styles/userlist.css";
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
+/*
+Este codigo establece el valor inicial de la variable de estado "users" como los datos de usuarios almacenados
+ previamente en el almacenamiento local del navegador con la clave "UsuariosData", si existen. 
+ Si no hay datos almacenados previamente, establece un valor vacío
+*/
 function UserList() {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(() => {
+    const saveUsers = window.localStorage.getItem("UsuariosData");
+    if (saveUsers) {
+      return JSON.parse(saveUsers);
+    } else {
+      return [];
+    }
+  });
+
+  //Con  JSON.stringify convierto un objeto en cadena de texto
+  useEffect(() => {
+    window.localStorage.setItem("usuariosData", JSON.stringify(users));
+  }, [users]);
+
+  const { id } = useParams();
+
   const getAllUsers = async () => {
     const { data } = await axios.post(
       "http://localhost:3001/api/users/getAllUsers"
@@ -18,11 +40,22 @@ function UserList() {
     });
   }, []);
 
+  const deleteUsers = (id) => {
+    const isDelete = window.confirm(
+      `¿Deseas eliminar el registro con id: ${id} ? `
+    );
+
+    if (isDelete) {
+      const newUsers = users.filter((e) => e.id !== id);
+      setUsers(newUsers);
+    }
+  };
+
   return (
     <div className="list_bg">
       <div className="container">
         <div className="row">
-          <h4 className="texto"> Usuarios registrados: </h4>
+          <h4> Usuarios registrados: ({users.length}) </h4>
           {users.map((user, index) => (
             <div key={index} className="col-md-3">
               <div className="card bg-light">
@@ -71,7 +104,11 @@ function UserList() {
                 <p></p>
                 <p></p>
 
-                <button type="button" class="btn btn-danger">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  onClick={() => deleteUsers(user.id)}
+                >
                   Eliminar
                 </button>
               </div>

@@ -1,10 +1,10 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
-import Card from "../cards/Card";
-import Cards from "../cards/Cards";
+import Card from "./Card";
+import Cards from "./Cards";
 import { useSelector } from "react-redux";
-import image_cuatro from "./image_4.png";
+import imagenInicio from "../components/assets/imagenInicio.png";
 
 //rfc
 const Search = () => {
@@ -13,7 +13,7 @@ const Search = () => {
   return (
     <div className="container">
       <p></p>
-      <img src={image_cuatro}></img>
+      <img src={imagenInicio}></img>
       <p></p>
       <>
         <Dropdown>

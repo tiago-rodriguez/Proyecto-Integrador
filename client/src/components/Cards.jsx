@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "./Card";
-import image_cuatro from "./image_4.png";
+import imagenInicio from "../components/assets/imagenInicio.png";
 import Dropdown from "react-bootstrap/Dropdown";
 
 function Cards() {
@@ -15,6 +15,8 @@ function Cards() {
     const { data } = await axios.post(
       "http://localhost:3001/api/properties/getAllProperties"
     );
+    //SetProperties
+    //La linea 14 en la 9
 
     return data;
   };
@@ -23,7 +25,7 @@ function Cards() {
   return (
     <div className="container">
       <p></p>
-      <img src={image_cuatro}></img>
+      <img src={imagenInicio}></img>
       <p></p>
       <>
         <Dropdown>

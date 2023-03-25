@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormContainer from "../navbar/FormContainer";
+import FormContainer from "./FormContainer";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setUser } from "../../store/user";
-import "./login.css";
+import { setUser } from "../store/user";
+import "../styles/login.css";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -23,19 +23,7 @@ const Login = () => {
   };
 
   const [errors, setErrors] = useState({});
-  /*const setField = (field, value) => {
-    setForm({
-      ...form,
-      [field]: value,
-    });
 
-    if (!!errors[field])
-      setErrors({
-        ...errors,
-        [field]: null,
-      });
-  };
-  */
   const validateUser = () => {
     const { password, email } = field;
     const newErrors = {};

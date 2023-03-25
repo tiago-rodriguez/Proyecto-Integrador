@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Register from "./components/register/Register";
-import Login from "./components/login/Login";
-import Home from "./components/home/Home";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import Home from "./components/Home";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { setUser } from "./store/user";
-import NaView from "./components/navbar/Navbar";
-import Profile from "./components/profile/profile";
-import Cards from "./components/cards/Cards";
-import Search from "./components/search/Search";
-import UserList from "./components/userlist/Userlist";
+import NaView from "./components/Navbar";
+import Profile from "./components/Profile";
+import Cards from "./components/Cards";
+import Search from "./components/Search";
+import UserList from "./components/Userlist";
 
 function App() {
   const [properties, setProperties] = useState([]);
