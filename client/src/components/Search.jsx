@@ -4,7 +4,7 @@ import axios from "axios";
 import Card from "./Card";
 import Cards from "./Cards";
 import { useSelector } from "react-redux";
-import imagenInicio from "../components/assets/imagenInicio.png";
+import imagenInicio from "../assets/imagenInicio.png";
 
 //rfc
 const Search = () => {

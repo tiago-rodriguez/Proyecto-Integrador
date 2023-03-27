@@ -71,6 +71,10 @@ Properties.init(
       type: Sequelize.TEXT,
     },
 
+    image_6: {
+      type: Sequelize.TEXT,
+    },
+
     locate: {
       type: Sequelize.STRING,
       allowNull: false,

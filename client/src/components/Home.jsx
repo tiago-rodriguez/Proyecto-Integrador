@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/home.css";
 import axios from "axios";
-import { useDispatch } from "react-redux";
 
 function Home() {
   return (

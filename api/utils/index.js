@@ -32,6 +32,9 @@ const array = [
 
     image_5:
       "https://imgar.zonapropcdn.com/avisos/1/00/51/32/70/50/360x266/1858970330.jpg",
+
+    image_6:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/28/66/43/360x266/1858604735.jpg",
   },
 
   {
@@ -43,6 +46,7 @@ const array = [
     description:
       "Dormitorio 1: 2,80 x 3,80 m. Dormitorio 2: 3,32 x 2,40 m. Dormitorio 3: 2,05 x 4,15 m. Living: 2,92 x 7,66 m. Balcón corrido: 1,20 x 8 m. Hall comunicador: 1,83 de 2,95 m. Baño Principal: 1,87 x 2,30 m. Baño: 0,95 x 1,50 m. Cocina: 2,05 x 4,15 m.",
     available: true,
+    meters: " 95m²",
     rooms: " 3 Habitaciones",
     bathrooms: " 1 Baño",
     enviroments: " 3 Ambientes",
@@ -63,6 +67,9 @@ const array = [
 
     image_5:
       "https://imgar.zonapropcdn.com/avisos/1/00/51/32/09/22/360x266/1858842159.jpg",
+
+    image_6:
+      "https://imgar.zonapropcdn.com/avisos/1/00/50/78/53/73/360x266/1844216732.jpg",
   },
   {
     title: "French 2600 y Anchorena: Lindisimo con Balcon",
@@ -94,6 +101,9 @@ const array = [
 
     image_5:
       "https://imgar.zonapropcdn.com/avisos/1/00/47/80/59/28/360x266/1850794886.jpg",
+
+    image_6:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/27/93/29/360x266/1857923600.jpg",
   },
   {
     title: "Departamento · 51m² · 2 Ambientes ",
@@ -125,6 +135,9 @@ const array = [
 
     image_5:
       "https://imgar.zonapropcdn.com/avisos/1/00/51/26/18/72/360x266/1857539854.jpg",
+
+    image_6:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/10/28/77/360x266/1853834646.jpg",
   },
   {
     title:
@@ -157,6 +170,9 @@ const array = [
 
     image_5:
       "https://imgar.zonapropcdn.com/avisos/1/00/51/32/44/95/360x266/1858917898.jpg",
+
+    image_6:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/35/74/02/360x266/1859587088.jpg",
   },
 
   {
@@ -189,6 +205,9 @@ const array = [
 
     image_5:
       "https://imgar.zonapropcdn.com/avisos/1/00/51/30/03/45/360x266/1858377630.jpg",
+
+    image_6:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/37/75/18/360x266/1860015059.jpg",
   },
 
   {
@@ -220,6 +239,9 @@ const array = [
 
     image_5:
       "https://imgar.zonapropcdn.com/avisos/1/00/50/62/51/28/360x266/1838982337.jpg",
+
+    image_6:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/10/28/44/360x266/1853834011.jpg",
   },
 
   {
@@ -252,6 +274,9 @@ const array = [
 
     image_5:
       "https://imgar.zonapropcdn.com/avisos/1/00/51/18/14/05/360x266/1855824171.jpg",
+
+    image_6:
+      "https://imgar.zonapropcdn.com/avisos/1/00/51/37/06/99/360x266/1859880580.jpg",
   },
 
   {
@@ -284,6 +309,9 @@ const array = [
 
     image_5:
       "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/97/94/14/1200x1200/1858186018.jpg",
+
+    image_6:
+      "https://imgar.zonapropcdn.com/avisos/1/00/47/17/60/61/360x266/1773589374.jpg",
   },
 ];
 
