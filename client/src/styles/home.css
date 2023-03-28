@@ -13,3 +13,17 @@
   background-repeat: no-repeat;
   max-width: 100%;
 }
+
+.texto {
+  position: absolute;
+  z-index: inherit;
+  margin-left: 45px;
+  margin-top: 100px;
+  width: 30%;
+  background-color: transparent;
+  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+
+  color: rgb(255, 255, 255);
+}
