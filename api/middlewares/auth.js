@@ -11,8 +11,8 @@ const validateUser = (req, res, next) => {
 };
 
 function validateAdmin(req, res, next) {
-  const { token } = req.body; //body es el objeto que le paso
-  console.log(token);
+  const token = req.body.token; //body es el objeto que le paso
+
   if (!token) return res.sendStatus(401);
 
   const { user } = validateToken(token);

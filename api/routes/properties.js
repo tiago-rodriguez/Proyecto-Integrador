@@ -5,14 +5,6 @@ const { validateAdmin, validateUser } = require("../middlewares/auth");
 const { Sequelize } = require("sequelize");
 const Op = Sequelize.Op;
 
-//http://localhost:3001/api/properties/create
-
-router.post("/create", validateAdmin, (req, res) => {
-  Properties.create(req.body).then((property) => {
-    res.status(201).send(property);
-  });
-});
-
 //http://localhost:3001/api/properties/all
 
 router.get("/all", (req, res) => {
@@ -21,6 +13,7 @@ router.get("/all", (req, res) => {
   });
 });
 
+//BUSCA A LA PROPIEDAD POR EL ID
 //http://localhost:3001/api/properties/:id
 
 router.get("/:id", (req, res) => {
@@ -28,6 +21,26 @@ router.get("/:id", (req, res) => {
   Properties.findOne({ where: { id } }).then((property) => {
     res.status(200).send(property);
   });
+});
+
+//CREA UNA PROPIEDAD
+//http://localhost:3001/api/properties/create
+
+router.post("/create", validateAdmin, (req, res) => {
+  Properties.create(req.body).then((property) => {
+    res.status(201).send(property);
+  });
+});
+
+//EDITA UNA PROPIEDAD
+//http://localhost:3001/api/properties/change/:id
+
+router.put("/change/:id", validateAdmin, (req, res) => {
+  const id = req.params.id;
+  Properties.findByPk(id)
+    .then((property) => property.update(req.body))
+    .then((propertyUpdated) => res.status(201).send(propertyUpdated))
+    .catch((err) => res.status(400).send(err));
 });
 
 //BORRA LA PROPIEDAD
@@ -80,12 +93,11 @@ router.post("/price", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-//CREA TODAS LAS PROPIEDADES
+//OBTIENE TODAS LAS PROPIEDADES
 //http://localhost:3001/api/properties/getAllProperties
 
 router.post("/getAllProperties", (req, res) => {
   Properties.findAll().then((property) => {
-    console.log(property);
     res.status(200).send(property);
   });
 });

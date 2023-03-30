@@ -70,7 +70,7 @@ router.post("/login", (req, res) => {
   /*Esta ruta identificara al usuario por id para luego eliminarlo de la DB,
    La función llama al método destroy pasando un objeto que indica que se debe eliminar el usuario con el ID coincidente
    */
-  router.delete("/delete/:id", validateAdmin, (req, res) => {
+  router.delete("/:id", validateAdmin, (req, res) => {
     const id = req.params.id;
     Users.destroy({ where: { id } })
       .then(() => res.status(204).send("Deleted User"))

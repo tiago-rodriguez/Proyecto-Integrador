@@ -8,7 +8,7 @@ function Home() {
     <div>
       <div className="home_bg_dos">
         <h1 className="texto">
-          Hola bienvenido a House of Dev!!! Para una mejor experiencia Ingresa o
+          Hola bienvenido a House of Dev Para una mejor experiencia Ingresa o
           registrate!!
           <p></p>
           <Nav className="me-auto">

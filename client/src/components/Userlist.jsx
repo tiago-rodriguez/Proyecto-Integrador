@@ -40,14 +40,14 @@ function UserList() {
     });
   }, []);
 
-  const deleteUsers = (id) => {
-    const isDelete = window.confirm(
-      `¿Deseas eliminar el registro con id: ${id} ? `
-    );
+  const deleteUsers = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3001/api/properties/${id}`);
 
-    if (isDelete) {
-      const newUsers = users.filter((e) => e.id !== id);
-      setUsers(newUsers);
+      setUsers(users.filter((user) => user.id !== id));
+      console.log(`User with ID ${id} has been deleted`);
+    } catch (error) {
+      console.error(`Error deleting property with ID ${id}: ${error.message}`);
     }
   };
 

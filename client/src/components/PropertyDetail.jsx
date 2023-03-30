@@ -226,23 +226,4 @@ function PropertyDetail() {
   );
 }
 
-/*
-    <div>
-      <h1>{propertie.title}</h1>
-      <h4>{propertie.description}</h4>
-      <p>{propertie.adress}</p>
-      <p>{propertie.rooms}</p>
-      <p>{propertie.bathrooms}</p>
-      <p>{propertie.enviroments}</p>
-      <p>{propertie.meters}</p>
-      <p>{propertie.avaible}</p>
-      <p>{propertie.operation}</p>
-      <p>{propertie.city}</p>
-      <p>{propertie.price}</p>
-      <p>{propertie.country}</p>
-      <p>{propertie.locate}</p>
-      <p>{propertie.category}</p>
-    </div>
-    */
-
 export default PropertyDetail;

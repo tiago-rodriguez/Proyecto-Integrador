@@ -21,7 +21,6 @@ function Cards() {
 
     return data;
   };
-  console.log(properties);
 
   return (
     <div className="container">
@@ -71,6 +70,7 @@ function Cards() {
                 locate={card.locate}
                 category={card.category}
               />
+
               <div className="verMas">
                 <Nav.Link href={`/propertyDetail/${card.id}`}>
                   <button type="button" class="btn btn-light">

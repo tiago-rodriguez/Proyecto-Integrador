@@ -252,7 +252,7 @@ const NaView = () => {
 
                     <li class="nav-item">
                       <Nav className="me-auto">
-                        <Nav.Link href="/">
+                        <Nav.Link href="/editProperties">
                           <div className="list_item text-white ">
                             Agregar o eliminar Propiedades
                           </div>

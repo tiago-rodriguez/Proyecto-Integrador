@@ -12,6 +12,8 @@ import Cards from "./components/Cards";
 import Search from "./components/Search";
 import UserList from "./components/Userlist";
 import PropertyDetail from "./components/PropertyDetail";
+import PropertiesTable from "./components/PropertiesTable";
+import PropertyCreate from "./components/PropertyCreate";
 
 function App() {
   const [properties, setProperties] = useState([]);
@@ -61,6 +63,8 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/usersView" element={<UserList />} />
         <Route path="/propertyDetail/:id" element={<PropertyDetail />} />
+        <Route path="/editProperties" element={<PropertiesTable />} />
+        <Route path="/createPropertie" element={<PropertyCreate />} />
       </Routes>
     </>
   );

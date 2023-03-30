@@ -1,9 +1,7 @@
 import React from "react";
 import "../styles/cards.css";
 import Carousel from "react-bootstrap/Carousel";
-import Nav from "react-bootstrap/Nav";
 
-//Hacer una carpetita assets
 //Props es un objeto que lo desestructuro
 function Card({
   title,
