@@ -9,7 +9,7 @@ const array = [
     country: " Argentina",
     locate: "Av.Las Heras",
     description:
-      "Derpartamento ubicado en RECOLETA. Próximo a las Avenidas Coronel Diaz , Avda las Heras. Cerca de todos los medios de transporte. Zona residencial y comercial. Cercano a los Hospitales Rivadavia y Aleman La unidad es un MONOAMBIENTE con espacio guardado., Cocina y baño completo.Calefon individual.",
+      "Derpartamento ubicado en RECOLETA. Próximo a las Avenidas Coronel Diaz , Avda las Heras. Cerca de todos los medios de transporte. ",
     available: true,
     meters: " 35m²",
     rooms: 2,
@@ -44,7 +44,7 @@ const array = [
     country: "Argentina",
     locate: " Av.Las Heras",
     description:
-      "Dormitorio 1: 2,80 x 3,80 m. Dormitorio 2: 3,32 x 2,40 m. Dormitorio 3: 2,05 x 4,15 m. Living: 2,92 x 7,66 m. Balcón corrido: 1,20 x 8 m. Hall comunicador: 1,83 de 2,95 m. Baño Principal: 1,87 x 2,30 m. Baño: 0,95 x 1,50 m. Cocina: 2,05 x 4,15 m.",
+      "Dormitorio 1: 2,80 x 3,80 m. Dormitorio 2: 3,32 x 2,40 m. Dormitorio 3: 2,05 x 4,15 m. Living: 2,92 x 7,66 m. Balcón corrido: 1,20 x 8 m.",
     available: true,
     meters: " 95m²",
     rooms: 3,
@@ -112,7 +112,7 @@ const array = [
     country: "Argentina",
     locate: "Palermo",
     description:
-      "Espectacular 2 ambientes TOTALMENTE AMOBLADO, a estrenar en el Complejo Vitta Carranza en PalermoEdificio de 9 pisos, departamento con cochera y baulera.Dormitorio en suite - VestidorToilette de recepciónGRAN BALCON CON JARDIN!!!Seguridad presencial las 24 hsCalefacción individual por losa radianteNo apto mascotasAmenities ",
+      "Espectacular 2 ambientes TOTALMENTE AMOBLADO, a estrenar en el Complejo Vitta Carranza en PalermoEdificio de 9 pisos,",
     available: false,
     meters: "63m²",
     rooms: 2,
@@ -147,7 +147,7 @@ const array = [
     country: "Argentina",
     locate: "Palermo",
     description:
-      "Inmejorable departamento 2 ambientes con cochera. Piso alto con vista abierta a toda la ciudad, super luminoso con amplio balcon y ventanales.Ubicado en el corazon de Palermo Soho.Hall de recepcion, amplio living con cocina integrada y salida al balcon, baño completo, comodo dormitorio con placar completo y gran ventanal.La unidad posee A/A frío calor en living y dormitorio.Cochera descubierta en PB.Excelente estado y listo para mudarse!",
+      "Inmejorable departamento 2 ambientes con cochera. Piso alto con vista abierta a toda la ciudad, ",
     available: false,
     meters: "63m²",
     rooms: 2,
@@ -182,7 +182,7 @@ const array = [
     country: "Argentina",
     locate: "Recoleta",
     description:
-      "Lindísimo departamento en pleno recoleta. Cuenta con 3 dormitorios, 3 baños, amplios placards, hall distribuidor, living comedor en L a balcón, gran cocina con espacio para comedor de diario. Pisos de parquet. Doble circulación.Calefacción central, split en living comedor.",
+      "Lindísimo departamento en pleno recoleta. Cuenta con 3 dormitorios, 3 baños, amplios placards, hall distribuidor, living comedor en L a balcón, ",
     available: false,
     meters: "115m²",
     rooms: 4,

@@ -11,7 +11,9 @@ function Home() {
     <div>
       <div className="home_bg_dos">
         <h1 className="texto">
-          {user.id ? null : (
+          {user.id ? (
+            <h1> Gracias por ingresar {user.nombre} bienvenido!! </h1>
+          ) : (
             <h1>
               Hola bienvenido a House of Dev Para una mejor experiencia Ingresa
               o registrate!!
