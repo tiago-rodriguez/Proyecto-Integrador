@@ -7,8 +7,6 @@ import { Nav } from "react-bootstrap";
 import "../styles/cards.css";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Link, json } from "react-router-dom";
-
 function Cards() {
   const [busqueda, setBusqueda] = useState("");
 
@@ -47,7 +45,33 @@ function Cards() {
     setProperties(resultadoBusqueda);
   };
 
-  const user = useSelector((state) => state.user);
+  const handleSubmitLessPrice = () => {
+    const ordenadoMenor = properties.slice().sort(function (a, b) {
+      return a.price - b.price;
+    });
+
+    setProperties(ordenadoMenor);
+  };
+
+  const handleSubmitLessEnviroments = () => {
+    const ordenadoMenor = properties.slice().sort(function (a, b) {
+      return a.enviroments - b.enviroments;
+    });
+
+    setProperties(ordenadoMenor);
+  };
+
+  // const handleSubmitRoom = (e) => {
+  //   e.preventDefault();
+  //   axios
+  //     .get(http://localhost:3001/api/properties/rooms/${input}, {
+  //       withCredentials: true,
+  //     })
+  //     .then((res) => setProperties(res.data))
+  //     .catch((error) => console.log("Fallo", error));
+  // };
+
+  //const user = useSelector((state) => state.user);
 
   return (
     <div className="container">
@@ -76,8 +100,15 @@ function Cards() {
           </Dropdown.Toggle>
 
           <Dropdown.Menu variant="dark">
-            <Dropdown.Item href="#/action-2">Ambientes</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Precio</Dropdown.Item>
+            <Dropdown.Item
+              href="#/action-2"
+              onClick={handleSubmitLessEnviroments}
+            >
+              Ambientes
+            </Dropdown.Item>
+            <Dropdown.Item href="#/action-3" onClick={handleSubmitLessPrice}>
+              Precio
+            </Dropdown.Item>
             <Dropdown.Divider />
           </Dropdown.Menu>
         </Dropdown>
