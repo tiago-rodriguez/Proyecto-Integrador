@@ -12,6 +12,7 @@ const Login = () => {
 
   const navigate = useNavigate();
   const [field, setField] = useState({
+    id: "",
     password: "",
     email: "",
   });

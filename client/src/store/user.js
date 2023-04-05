@@ -11,6 +11,7 @@ const initialState = {
   apellido: null,
   cellPhone: null,
   admin: null,
+  properties: [],
 };
 const userReducer = createReducer(initialState, {
   [setUser]: (state, action) => action.payload,

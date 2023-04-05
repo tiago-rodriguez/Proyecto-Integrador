@@ -4,8 +4,14 @@ import Card from "./Card";
 import imagenInicio from "../assets/imagenInicio.png";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Nav } from "react-bootstrap";
+import "../styles/cards.css";
+import { useDispatch, useSelector } from "react-redux";
+
+import { Link, json } from "react-router-dom";
 
 function Cards() {
+  const [busqueda, setBusqueda] = useState("");
+
   useEffect(() => {
     getAllProperties().then((propiedades) => {
       setProperties(propiedades);
@@ -22,11 +28,44 @@ function Cards() {
     return data;
   };
 
+  const handleChange = (e) => {
+    setBusqueda(e.target.value);
+    filtrar(e.target.value);
+  };
+
+  const filtrar = (terminoDeBusqueda) => {
+    var resultadoBusqueda = properties.filter((element) => {
+      if (
+        element.title
+          .toString()
+          .toLowerCase()
+          .includes(terminoDeBusqueda.toLowerCase())
+      ) {
+        return element;
+      }
+    });
+    setProperties(resultadoBusqueda);
+  };
+
+  const user = useSelector((state) => state.user);
+
   return (
     <div className="container">
       <p></p>
       <img src={imagenInicio} class="img-fluid"></img>
       <p></p>
+
+      <form class="form-inline my-2 my-lg-0">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Buscar propiedades..."
+          aria-label="Search"
+          value={busqueda}
+          onChange={handleChange}
+        />
+      </form>
+
       <>
         <Dropdown>
           <Dropdown.Toggle
@@ -44,10 +83,13 @@ function Cards() {
         </Dropdown>
       </>
       <p></p>
+
+      <h1 className="texto_propiedad"> PROPIEDADES DISPONIBLES </h1>
+
       <div className="container justify-content-center align-items-center ">
         <div className="row">
           {properties?.map((card) => (
-            <div className="col-md-4" key={card.id}>
+            <div className="col-md-4 my-5 mb-4" key={card.id}>
               <Card
                 title={card.title}
                 description={card.description}
@@ -97,3 +139,22 @@ function Cards() {
 }
 
 export default Cards;
+
+// const [input, setInput] = useState("");
+
+// const fetchData = (value) => {
+//   fetch("http://localhost:3001/api/properties/search")
+//     .then((response) => response.json())
+//     .then((json) => {
+//       const results = json.filter((user) => {
+//         return user && user.name.toLowerCase().includes(value)
+//       })
+//       console.log(results)
+
+//     });
+// };
+
+// const handleChange = (value) => {
+//   setInput(value);
+//   fetchData(value);
+// };

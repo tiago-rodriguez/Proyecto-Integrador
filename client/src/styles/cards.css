@@ -1,11 +1,5 @@
-.container {
-  color: rgb(47, 77, 67);
-}
-
-.favoritos {
-  margin-top: 5px;
-}
-
-.verMas {
-  margin-top: 5px;
+.texto_propiedad {
+  color: rgb(45, 54, 54);
+  text-decoration: underline;
+  text-align: center;
 }

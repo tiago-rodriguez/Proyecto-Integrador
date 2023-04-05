@@ -24,22 +24,28 @@ router.get("/:id", (req, res) => {
 });
 
 //CREA UNA PROPIEDAD
+// Si la creación es exitosa, se enviará una respuesta con un código de estado 201 y
+// el objeto creado como respuesta. Si hay algún error en la creación, el controlador de
+// ruta devolverá un error con un código 500 (Error interno del servidor).
 //http://localhost:3001/api/properties/create
 
 router.post("/create", validateAdmin, (req, res) => {
-  Properties.create(req.body).then((property) => {
+  console.log(req.body.newProperty);
+  Properties.create(req.body.newProperty).then((property) => {
     res.status(201).send(property);
   });
 });
 
 //EDITA UNA PROPIEDAD
-//http://localhost:3001/api/properties/change/:id
+//http://localhost:3001/api/properties/:id
 
-router.put("/change/:id", validateAdmin, (req, res) => {
+router.put("/:id", validateAdmin, (req, res) => {
   const id = req.params.id;
+  console.log(req.body.newProperty);
   Properties.findByPk(id)
-    .then((property) => property.update(req.body))
+    .then((property) => property.update(req.body.newProperty))
     .then((propertyUpdated) => res.status(201).send(propertyUpdated))
+
     .catch((err) => res.status(400).send(err));
 });
 
@@ -60,7 +66,6 @@ router.post("/search", (req, res) => {
   const lower = search.toLowerCase();
   Properties.findAll({
     where: {
-      //adress: { [Op.iLike]: `%${lower}%` },
       title: { [Op.iLike]: `%${lower}%` },
     },
   }).then((searched) => {

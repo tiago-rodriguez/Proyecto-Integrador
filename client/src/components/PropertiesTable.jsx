@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Nav } from "react-bootstrap";
-import { useParams } from "react-router-dom";
 
 function PropertiesTable() {
   useEffect(() => {
@@ -33,7 +32,7 @@ function PropertiesTable() {
       });
       setProperties(properties.filter((property) => property.id !== id));
 
-      console.log(`User with ID ${id} has been deleted`);
+      console.log(`Property with ID ${id} has been deleted`);
     } catch (error) {
       console.error(`Error deleting property with ID ${id}: ${error.message}`);
     }
@@ -43,9 +42,9 @@ function PropertiesTable() {
     <div>
       <div className="col-md-4">
         <div>
-          <table class="table">
-            <thead class="thead-dark">
-              <tr>
+          <table class="table table-dark">
+            <thead class="thead-dark ">
+              <tr class="sticky-top">
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
@@ -58,7 +57,7 @@ function PropertiesTable() {
                 <th scope="col">City</th>
                 <th scope="col">Price</th>
                 <th scope="col">Country</th>
-                <th scope="col">Locate</th>
+                <th scope="col">Barrio</th>
                 <th scope="col">Category</th>
                 <th scope="col">Actions</th>
               </tr>
@@ -85,6 +84,14 @@ function PropertiesTable() {
                       <Nav.Link href="/createPropertie">
                         <button type="button" class="btn btn-success">
                           Agregar
+                        </button>
+                      </Nav.Link>
+                    </Nav>
+
+                    <Nav className="me-auto">
+                      <Nav.Link href={`/editPropertie/${property.id}`}>
+                        <button type="button" class="btn btn-warning">
+                          Editar
                         </button>
                       </Nav.Link>
                     </Nav>

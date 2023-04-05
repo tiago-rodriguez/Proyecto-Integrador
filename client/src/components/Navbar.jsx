@@ -40,20 +40,20 @@ const NaView = () => {
       content: "Sesion cerrada",
     });
   };
-  const handleSumbit = () => {
-    axios
-      .get(`http://localhost:3001/api/properties/search/${search}`)
-      .then((res) => dispatch(setSearch(res.data)))
-      .then(() => navigate("/search"))
-      .catch((error) => console.error(error));
-  };
+  // const handleSumbit = () => {
+  //   axios
+  //     .get(`http://localhost:3001/api/properties/search/${search}`)
+  //     .then((res) => dispatch(setSearch(res.data)))
+  //     .then(() => navigate("/search"))
+  //     .catch((error) => console.error(error));
+  // };
   const navigate = useNavigate();
   return (
     <>
       {contextHolder}
 
       <Navbar.Brand className="brand">
-        <nav className="navbar navbar-expand-lg shadow-lg sticky-top ">
+        <nav className="navbar navbar-expand-lg shadow-lg">
           <div class="container-fluid">
             <Link to="/home">
               <img src="Logo.png" width="70" />
@@ -116,37 +116,7 @@ const NaView = () => {
                         </li>
                       </ul>
                     </div>
-                    <div>
-                      <form class="d-flex" role="search">
-                        <input
-                          class="form-control me-2"
-                          type="text"
-                          placeholder="Search"
-                          aria-label="Search"
-                          value={search}
-                          onChange={getSearcher}
-                        />
-
-                        <Link to={"/search"}>
-                          <button
-                            class="btn btn-outline-dark"
-                            onClick={handleSumbit}
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
-                              fill="currentColor"
-                              class="bi bi-search"
-                              viewBox="0 0 16 16"
-                            >
-                              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>
-                            Buscar
-                          </button>
-                        </Link>
-                      </form>
-                    </div>
+                    <div></div>
                   </ul>
 
                   {!user.nombre ? (
@@ -252,7 +222,7 @@ const NaView = () => {
 
                     <li class="nav-item">
                       <Nav className="me-auto">
-                        <Nav.Link href="/editProperties">
+                        <Nav.Link href="/properties">
                           <div className="list_item text-white ">
                             Agregar o eliminar Propiedades
                           </div>

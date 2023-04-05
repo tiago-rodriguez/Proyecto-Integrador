@@ -42,10 +42,21 @@ router.post("/login", (req, res) => {
         apellido: user.apellido,
         cellPhone: user.cellPhone,
         admin: user.admin,
+        id: user.id,
       };
 
       const token = generateToken(payload); //Devuelve un token
       res.send([payload, token]);
+    });
+  });
+
+  //BUSCA AL USUARIO POR EL ID
+  //http://localhost:3001/api/users/:id
+
+  router.get("/:id", (req, res) => {
+    const id = req.params.id;
+    Users.findOne({ where: { id } }).then((user) => {
+      res.status(200).send(user);
     });
   });
 
@@ -61,10 +72,21 @@ router.post("/login", (req, res) => {
   //Probar con params
   //ruta para mostrar todos los usuarios siendo admin
   router.post("/getAllUsers", (req, res) => {
-    Users.findAll().then((users) => {
-      console.log(users);
-      res.status(200).send(users);
+    Users.findAll().then((user) => {
+      console.log(user);
+      res.status(200).send(user);
     });
+  });
+
+  //EDITA AL USUARIO
+  router.put("/:id", (req, res) => {
+    const id = req.params.id;
+    console.log(req.body.userUpdate);
+    Users.findByPk(id)
+      .then((user) => user.update(req.body.userUpdate))
+      .then((userUpdated) => res.status(201).send(userUpdated))
+
+      .catch((err) => res.status(400).send(err));
   });
 
   /*Esta ruta identificara al usuario por id para luego eliminarlo de la DB,

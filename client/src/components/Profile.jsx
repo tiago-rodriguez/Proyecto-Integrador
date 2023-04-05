@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { Nav } from "react-bootstrap";
 import "../styles/profile.css";
+
 const Profile = () => {
   const user = useSelector((state) => state.user);
-
+  console.log(user);
   return (
     <div class="profile_bg">
       <div class="container">
@@ -13,7 +15,7 @@ const Profile = () => {
               <div class="col-sm-4 bg-info rounded-left">
                 <div class="card-block text-center text-white ">
                   <i class="fas fa-user-tie fa-7x mt-5 bi bi-person"></i>
-                  <h2 class="font-weight-bold mt-4"></h2>
+                  <h2 class="font-weight-bold mt-5"></h2>
                   <div className="Contenedor-icono">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -53,6 +55,14 @@ const Profile = () => {
                     <h6 class="text-muted">{user.cellPhone}</h6>
                   </div>
                 </div>
+
+                <Nav>
+                  <Nav.Link href={`/editUser/${user.id}`}>
+                    <button type="button" class="btn btn-primary">
+                      Editar
+                    </button>
+                  </Nav.Link>
+                </Nav>
               </div>
             </div>
           </div>

@@ -3,8 +3,11 @@ import axios from "axios";
 import { useState } from "react";
 import "../styles/form.css";
 import { Nav } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
-function UpdateProperty() {
+function PropertyEdit() {
+  const { id } = useParams();
+
   const [newProperty, setNewProperty] = useState({
     title: "",
     description: "",
@@ -21,13 +24,14 @@ function UpdateProperty() {
     price: 0,
   });
 
-  const createProperty = () => {
+  const editProperty = () => {
     const token = window.localStorage.getItem("token");
     console.log(token);
     console.log(newProperty);
+    console.log(id);
     axios
-      .post(
-        "http://localhost:3001/api/properties/create",
+      .put(
+        `http://localhost:3001/api/properties/${id}`,
         {
           newProperty,
 
@@ -42,8 +46,8 @@ function UpdateProperty() {
       )
 
       .then((response) => {
-        console.log("la propiedad ha sido creada", response);
-        // la propiedad ha sido creada con éxito
+        console.log("la propiedad ha sido editada", response);
+        // la propiedad ha sido editada con éxito
       })
       .catch((error) => {
         console.log("Aca esta el error", error);
@@ -53,7 +57,7 @@ function UpdateProperty() {
 
   return (
     <div>
-      <h1>Crea tu propiedad!!</h1>
+      <h1>Edita tu propiedad!!</h1>
       <form className="formulario">
         <label>
           Título:
@@ -242,7 +246,7 @@ function UpdateProperty() {
             }
           />
         </label>
-        <button type="button" class="btn btn-success" onClick={createProperty}>
+        <button type="button" class="btn btn-success" onClick={editProperty}>
           Guardar
         </button>
       </form>
@@ -258,4 +262,4 @@ function UpdateProperty() {
   );
 }
 
-export default UpdateProperty;
+export default PropertyEdit;
