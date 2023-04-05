@@ -81,10 +81,10 @@ router.post("/login", (req, res) => {
   //EDITA AL USUARIO
   router.put("/:id", (req, res) => {
     const id = req.params.id;
-    console.log(req.body.userUpdate);
+    console.log(req.body.newUser);
     Users.findByPk(id)
-      .then((user) => user.update(req.body.userUpdate))
-      .then((userUpdated) => res.status(201).send(userUpdated))
+      .then((user) => user.update(req.body.newUser))
+      .then((newUserd) => res.status(201).send(newUserd))
 
       .catch((err) => res.status(400).send(err));
   });
