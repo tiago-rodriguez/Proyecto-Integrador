@@ -12,12 +12,12 @@ const array = [
       "Derpartamento ubicado en RECOLETA. Próximo a las Avenidas Coronel Diaz , Avda las Heras. Cerca de todos los medios de transporte. ",
     available: true,
     meters: " 35m²",
-    rooms: 2,
-    bathrooms: 2,
-    enviroments: 3,
+    rooms: 1,
+    bathrooms: 1,
+    enviroments: 1,
     category: " Departamento",
     operation: "Alquiler",
-    price: 45509,
+    price: 45500,
     image:
       "https://imgar.zonapropcdn.com/avisos/1/00/49/30/94/03/360x266/1799091787.jpg",
 
@@ -52,7 +52,7 @@ const array = [
     enviroments: 3,
     category: " Departamento",
     operation: " Venta",
-    price: 200000,
+    price: 235000,
     image:
       "https://imgar.zonapropcdn.com/avisos/1/00/51/32/09/22/360x266/1858842165.jpg",
 
@@ -219,9 +219,9 @@ const array = [
     description: "Lindísimo departamento en pleno palermo. ",
     available: false,
     meters: "175m²",
-    rooms: 4,
+    rooms: 3,
     bathrooms: 2,
-    enviroments: 3,
+    enviroments: 4,
     category: "Departamento",
     operation: "Alquiler",
     price: 1700,
