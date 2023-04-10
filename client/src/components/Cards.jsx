@@ -31,6 +31,8 @@ function Cards() {
     filtrar(e.target.value);
   };
 
+  //Esta función filtra la matriz "properties" por un término de búsqueda específico en la propiedad "title" y
+  //actualiza la matriz "properties" con los elementos que coinciden con la búsqueda.
   const filtrar = (terminoDeBusqueda) => {
     var resultadoBusqueda = properties.filter((element) => {
       if (
@@ -45,6 +47,7 @@ function Cards() {
     setProperties(resultadoBusqueda);
   };
 
+  //Ordena los precios de menor a mayor
   const handleSubmitLessPrice = () => {
     const ordenadoMenor = properties.slice().sort(function (a, b) {
       return a.price - b.price;
@@ -53,6 +56,7 @@ function Cards() {
     setProperties(ordenadoMenor);
   };
 
+  //Ordena las habitaciones de menor a mayor
   const handleSubmitLessEnviroments = () => {
     const ordenadoMenor = properties.slice().sort(function (a, b) {
       return a.enviroments - b.enviroments;

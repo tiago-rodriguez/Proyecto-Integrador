@@ -10,12 +10,6 @@ import axios from "axios";
 
 const NaView = () => {
   const dispatch = useDispatch();
-  const [search, setSearch] = useState("");
-
-  const getSearcher = (e) => {
-    setSearch(e.target.value);
-  };
-  console.log(search);
 
   const user = useSelector((state) => state.user);
   const handleLogOut = () => {
@@ -140,7 +134,7 @@ const NaView = () => {
                   ) : (
                     <>
                       <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
+                        {/* <li class="nav-item">
                           <Nav className="me-auto">
                             <Nav.Link href="/">
                               <div className="list_item text-white">
@@ -148,7 +142,7 @@ const NaView = () => {
                               </div>
                             </Nav.Link>
                           </Nav>
-                        </li>
+                        </li> */}
 
                         <li class="nav-item">
                           <Nav className="me-auto">
