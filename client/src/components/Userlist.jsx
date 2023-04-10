@@ -24,8 +24,6 @@ function UserList() {
     window.localStorage.setItem("usuariosData", JSON.stringify(users));
   }, [users]);
 
-  const { id } = useParams();
-
   const getAllUsers = async () => {
     const { data } = await axios.post(
       "http://localhost:3001/api/users/getAllUsers"
@@ -41,13 +39,24 @@ function UserList() {
   }, []);
 
   const deleteUsers = async (id) => {
-    try {
-      await axios.delete(`http://localhost:3001/api/properties/${id}`);
+    const token = window.localStorage.getItem("token");
 
-      setUsers(users.filter((user) => user.id !== id));
-      console.log(`User with ID ${id} has been deleted`);
-    } catch (error) {
-      console.error(`Error deleting property with ID ${id}: ${error.message}`);
+    if (window.confirm("¿Estás seguro que deseas eliminar este usuario?")) {
+      try {
+        await axios.delete(`http://localhost:3001/api/users/${id}`, {
+          data: { token },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        setUsers(users.filter((user) => user.id !== id));
+        console.log(`User with ID ${id} has been deleted`);
+      } catch (error) {
+        console.error(
+          `Error deleting property with ID ${id}: ${error.message}`
+        );
+      }
     }
   };
 

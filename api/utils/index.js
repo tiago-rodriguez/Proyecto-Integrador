@@ -11,7 +11,7 @@ const array = [
     description:
       "Derpartamento ubicado en RECOLETA. Próximo a las Avenidas Coronel Diaz , Avda las Heras. Cerca de todos los medios de transporte. ",
     available: true,
-    meters: " 35m²",
+    meters: " 35",
     rooms: 1,
     bathrooms: 1,
     enviroments: 1,
@@ -46,7 +46,7 @@ const array = [
     description:
       "Dormitorio 1: 2,80 x 3,80 m. Dormitorio 2: 3,32 x 2,40 m. Dormitorio 3: 2,05 x 4,15 m. Living: 2,92 x 7,66 m. Balcón corrido: 1,20 x 8 m.",
     available: true,
-    meters: " 95m²",
+    meters: " 95",
     rooms: 3,
     bathrooms: 1,
     enviroments: 3,
@@ -80,7 +80,7 @@ const array = [
     description:
       "semipiso palier individual luminoso buen estado  general, 2 dormitorios  con 2 baños, uno en suite.  Luz y Sol, muy buen pulmón. ",
     available: true,
-    meters: "70m²",
+    meters: "70",
     rooms: 2,
     bathrooms: 2,
     enviroments: 3,
@@ -106,7 +106,7 @@ const array = [
       "https://imgar.zonapropcdn.com/avisos/1/00/51/27/93/29/360x266/1857923600.jpg",
   },
   {
-    title: "Departamento · 51m² · 2 Ambientes ",
+    title: "Departamento · 51 · 2 Ambientes ",
     adress: "Carranza al 1300",
     city: "Buenos Aires",
     country: "Argentina",
@@ -114,7 +114,7 @@ const array = [
     description:
       "Espectacular 2 ambientes TOTALMENTE AMOBLADO, a estrenar en el Complejo Vitta Carranza en PalermoEdificio de 9 pisos,",
     available: false,
-    meters: "63m²",
+    meters: "63",
     rooms: 2,
     bathrooms: 1,
     enviroments: 1,
@@ -149,10 +149,10 @@ const array = [
     description:
       "Inmejorable departamento 2 ambientes con cochera. Piso alto con vista abierta a toda la ciudad, ",
     available: false,
-    meters: "63m²",
+    meters: "63",
     rooms: 2,
     bathrooms: 1,
-    enviroments: 1,
+    enviroments: 2,
     category: "Departamento",
     operation: "Alquiler",
     price: 750,
@@ -184,7 +184,7 @@ const array = [
     description:
       "Lindísimo departamento en pleno recoleta. Cuenta con 3 dormitorios, 3 baños, amplios placards, hall distribuidor, living comedor en L a balcón, ",
     available: false,
-    meters: "115m²",
+    meters: "115",
     rooms: 4,
     bathrooms: 3,
     enviroments: 3,
@@ -218,7 +218,7 @@ const array = [
     locate: "Palermo",
     description: "Lindísimo departamento en pleno palermo. ",
     available: false,
-    meters: "175m²",
+    meters: "175",
     rooms: 3,
     bathrooms: 2,
     enviroments: 4,
@@ -253,7 +253,7 @@ const array = [
     description:
       "-Cómodo Studio ideal para 1 o 2 personas, ubicado en una de las zonas mas lindas de Buenos Aires;.",
     available: false,
-    meters: "36m²",
+    meters: "36",
     rooms: 1,
     bathrooms: 1,
     enviroments: 1,
@@ -288,7 +288,7 @@ const array = [
     description:
       "Comodo y espacioso Departamento de 1 ambiente ideal para 2 o 3 personas, ubicado en el centro de Buenos Aires; ¡En el Barrio de Congreso! El mismo queda sobre la calle Maipú entre Tte. Gral. Juan Domingo Perón y Sarmiento",
     available: false,
-    meters: "32m²",
+    meters: "32",
     rooms: 1,
     bathrooms: 1,
     enviroments: 1,

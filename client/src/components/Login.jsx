@@ -6,9 +6,11 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store/user";
 import "../styles/login.css";
+import { message } from "antd";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const [messageApi, contextHolder] = message.useMessage();
 
   const navigate = useNavigate();
   const [field, setField] = useState({
@@ -30,8 +32,13 @@ const Login = () => {
     const newErrors = {};
     if (!password || password === "")
       newErrors.password = "Porfavor ingresa tu contraseña";
+
     if (!email || email === "")
       newErrors.email = "Porfavor ingresa un email valido";
+    messageApi.open({
+      type: "error",
+      content: "ERROR DE CONTRASEÑA Y/O USUARIO",
+    });
 
     return newErrors;
   };
@@ -64,66 +71,69 @@ const Login = () => {
   };
 
   return (
-    <div className="bg ">
-      <FormContainer>
-        <div class="position-absolute top-50 start-50 translate-middle bg-light shadow-lg size">
-          <h3>Iniciar sesión</h3>
-          <Form>
-            <Form.Group controlId="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                name="email"
-                type="email"
-                required
-                placeholder="Ingrese su email..."
-                value={field.email}
-                onChange={handleInput}
-                isInvalid={!!errors.email}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.email}
-              </Form.Control.Feedback>
-            </Form.Group>
+    <>
+      {contextHolder}
+      <div className="bg ">
+        <FormContainer>
+          <div class="position-absolute top-50 start-50 translate-middle bg-light shadow-lg size">
+            <h3>Iniciar sesión</h3>
+            <Form>
+              <Form.Group controlId="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="Ingrese su email..."
+                  value={field.email}
+                  onChange={handleInput}
+                  isInvalid={!!errors.email}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {errors.email}
+                </Form.Control.Feedback>
+              </Form.Group>
 
-            <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                name="password"
-                type="password"
-                placeholder="Ingrese su password..."
-                required
-                value={field.password}
-                onChange={handleInput}
-                isInvalid={!!errors.password}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.password}
-              </Form.Control.Feedback>
-            </Form.Group>
+              <Form.Group controlId="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  name="password"
+                  type="password"
+                  placeholder="Ingrese su password..."
+                  required
+                  value={field.password}
+                  onChange={handleInput}
+                  isInvalid={!!errors.password}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {errors.password}
+                </Form.Control.Feedback>
+              </Form.Group>
 
-            <Form.Group controlId="submit">
+              <Form.Group controlId="submit">
+                <div>
+                  <Button
+                    type="submit"
+                    onClick={handleSubmit}
+                    className="my-2"
+                    variant="dark"
+                  >
+                    Ingresar
+                  </Button>
+                </div>
+              </Form.Group>
+
               <div>
-                <Button
-                  type="submit"
-                  onClick={handleSubmit}
-                  className="my-2"
-                  variant="dark"
-                >
-                  Ingresar
-                </Button>
+                <span>
+                  ¿No tenés una cuenta? Registrate aca!
+                  <a href="/register">Registrarse </a>
+                </span>
               </div>
-            </Form.Group>
-
-            <div>
-              <span>
-                ¿No tenés una cuenta? Registrate aca!
-                <a href="/register">Registrarse </a>
-              </span>
-            </div>
-          </Form>
-        </div>
-      </FormContainer>
-    </div>
+            </Form>
+          </div>
+        </FormContainer>
+      </div>
+    </>
   );
 };
 
