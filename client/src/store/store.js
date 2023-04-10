@@ -8,7 +8,7 @@ const store = configureStore({
   reducer: {
     user: userReducer,
     search: searchReducer,
-    properties: propertyReducer,
+    property: propertyReducer,
   },
 });
 

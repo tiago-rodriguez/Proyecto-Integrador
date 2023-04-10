@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/form.css";
 import { Nav } from "react-bootstrap";
 import { useParams } from "react-router-dom";
@@ -8,6 +8,7 @@ import { Form } from "react-bootstrap";
 
 function PropertyEdit() {
   const { id } = useParams();
+  const [propertie, setPropertie] = useState([]);
   const [errors, setErrors] = useState({});
   const [newProperty, setNewProperty] = useState({
     title: "",
@@ -23,8 +24,14 @@ function PropertyEdit() {
     bathrooms: 0,
     meters: "",
     rooms: 0,
-    price: 0,
+    price: "",
   });
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/api/properties/${id}`)
+      .then((response) => response.json())
+      .then((data) => setPropertie(data));
+  }, [id]);
 
   const handleInput = (e) => {
     //Cuando escribo en el input genero un evento.
@@ -44,8 +51,6 @@ function PropertyEdit() {
       newErrors.title = "El título debe tener al menos 5 caracteres";
     } else if (newProperty.title.length > 50) {
       newErrors.title = "El título debe tener como máximo 50 caracteres";
-    } else if (!/^[a-zA-Z\s]+$/.test(newProperty.title)) {
-      newErrors.title = "El título solo puede contener letras y espacios";
     } else if (!/^[A-Z][a-zA-Z\s]*$/.test(newProperty.title)) {
       newErrors.title =
         "El título debe comenzar con mayúscula la primera letra de cada palabra";
@@ -64,9 +69,6 @@ function PropertyEdit() {
       newErrors.description = "El título debe tener al menos 5 caracteres";
     } else if (newProperty.description.length > 50) {
       newErrors.description = "El título debe tener como máximo 50 caracteres";
-    } else if (!/^[A-Z][a-zA-Z\s]*$/.test(newProperty.title)) {
-      newErrors.title =
-        "El título debe comenzar con mayúscula la primera letra de cada palabra";
     }
 
     if (!newProperty.operation) {
@@ -126,6 +128,7 @@ function PropertyEdit() {
             name="title"
             id="title"
             required
+            placeholder={propertie.title}
             type="text"
             value={newProperty.title}
             onChange={handleInput}
@@ -140,6 +143,7 @@ function PropertyEdit() {
             as="textarea"
             rows={3}
             required
+            placeholder={propertie.description}
             maxLength={100}
             value={newProperty.description}
             onChange={handleInput}
@@ -152,6 +156,7 @@ function PropertyEdit() {
             name="adress"
             type="text"
             required
+            placeholder={propertie.adress}
             maxLength={50}
             value={newProperty.adress}
             onChange={handleInput}
@@ -166,6 +171,7 @@ function PropertyEdit() {
             type="text"
             maxLength={50}
             required
+            placeholder={propertie.country}
             value={newProperty.country}
             onChange={handleInput}
           />
@@ -178,6 +184,7 @@ function PropertyEdit() {
             type="text"
             maxLength={50}
             required
+            placeholder={propertie.city}
             value={newProperty.city}
             onChange={handleInput}
           />
@@ -190,6 +197,7 @@ function PropertyEdit() {
             type="text"
             maxLength={50}
             required
+            placeholder={propertie.locate}
             value={newProperty.locate}
             onChange={handleInput}
           />
@@ -205,7 +213,7 @@ function PropertyEdit() {
             isInvalid={!!errors.category}
             required
           >
-            <option value="">Seleccionar categoría...</option>
+            <option value="">Categoria inicial: {propertie.category} </option>
             <option value="Casa">Casa</option>
             <option value="Departamento">Departamento</option>
           </Form.Select>
@@ -223,7 +231,7 @@ function PropertyEdit() {
             isInvalid={!!errors.operation}
             required
           >
-            <option value="">Seleccionar categoría...</option>
+            <option value="">Operacion inicial: {propertie.operation}</option>
             <option value="Venta">Venta</option>
             <option value="Alquiler">Alquiler</option>
           </Form.Select>
@@ -241,7 +249,7 @@ function PropertyEdit() {
             isInvalid={!!errors.enviroments}
             required
           >
-            <option value="">Seleccionar ambientes...</option>
+            <option value="">Valor inicial {propertie.enviroments}</option>
             <option value={1}>1</option>
             <option value={2}>2</option>
             <option value={3}>3</option>
@@ -261,7 +269,7 @@ function PropertyEdit() {
             isInvalid={!!errors.bathrooms}
             required
           >
-            <option value="">Seleccionar baños...</option>
+            <option value=""> Valor inicial: {propertie.bathrooms}</option>
             <option value={1}>1</option>
             <option value={2}>2</option>
             <option value={3}>3</option>
@@ -280,7 +288,7 @@ function PropertyEdit() {
             isInvalid={!!errors.rooms}
             required
           >
-            <option value="">Seleccionar habitaciones...</option>
+            <option value=""> Valor inicial: {propertie.rooms}</option>
             <option value={1}>1</option>
             <option value={2}>2</option>
             <option value={3}>3</option>
@@ -296,6 +304,7 @@ function PropertyEdit() {
             name="meters"
             type="number"
             required
+            placeholder={propertie.meters}
             maxLength={10}
             value={newProperty.meters}
             onChange={handleInput}
@@ -309,6 +318,7 @@ function PropertyEdit() {
             name="price"
             type="number"
             required
+            placeholder={propertie.price}
             value={newProperty.price}
             onChange={handleInput}
           />
