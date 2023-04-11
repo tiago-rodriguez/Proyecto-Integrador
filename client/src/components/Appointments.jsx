@@ -34,7 +34,7 @@ function Appointment({ show, handleClose }) {
     messageApi
       .open({
         type: "success",
-        content: "Turno agendado con éxito",
+        content: "Cita agendada con éxito",
       })
 
       .catch((error) => console.log(error));

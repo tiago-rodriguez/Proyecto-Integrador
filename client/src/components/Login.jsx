@@ -35,11 +35,11 @@ const Login = () => {
 
     if (!email || email === "")
       newErrors.email = "Porfavor ingresa un email valido";
+
     messageApi.open({
       type: "error",
       content: "ERROR DE CONTRASEÑA Y/O USUARIO",
     });
-
     return newErrors;
   };
 
@@ -64,9 +64,7 @@ const Login = () => {
         dispatch(setUser(data[0]));
         navigate("/home");
         console.log("Usuario logueado con exito", field.email);
-      } catch (error) {
-        console.log("ERROR DE USUARIO Y/O CONTRASEÑA");
-      }
+      } catch (error) {}
     }
   };
 
