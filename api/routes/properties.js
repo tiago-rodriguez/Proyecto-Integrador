@@ -112,9 +112,11 @@ router.post("/getAllProperties", (req, res) => {
 
 router.post("/addFavorites", validateUser, (req, res) => {
   const { id } = req.body;
+  console.log("este es el id", id);
   Properties.findByPk(id)
     .then((property) => {
-      property.setUsers(req.user.id);
+      console.log(req.user);
+      req.user.addProperty(property); // aquí se agrega la propiedad a los favoritos del usuario
       res.status(201).send(property);
     })
     .catch((error) => console.log(error));
