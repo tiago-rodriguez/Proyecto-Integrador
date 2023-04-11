@@ -1,8 +1,13 @@
 const Users = require("./users");
 const Properties = require("./Properties");
-const Reviews = require("./Reviews");
+const Appointments = require("./Appointments");
 
 Properties.belongsToMany(Users, { through: "favorites" });
 Users.belongsToMany(Properties, { through: "favorites" });
 
-module.exports = { Users, Properties, Reviews };
+Users.hasMany(Appointments, { foreignKey: "userId" });
+Appointments.belongsTo(Users);
+Appointments.belongsTo(Properties);
+Properties.hasMany(Appointments, { foreignKey: "propertyId" });
+
+module.exports = { Users, Properties };
