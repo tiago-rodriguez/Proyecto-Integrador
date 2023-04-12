@@ -57,4 +57,9 @@ User.beforeCreate((user) => {
   });
 });
 
+// Agrega el método addProperty
+User.prototype.addProperty = function (property) {
+  return this.addFavorite(property);
+};
+
 module.exports = User;
