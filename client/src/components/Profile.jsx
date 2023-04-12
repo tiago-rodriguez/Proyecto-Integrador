@@ -6,6 +6,9 @@ import "../styles/profile.css";
 const Profile = () => {
   const user = useSelector((state) => state.user);
   console.log(user);
+
+  const handleGetFavorites = () => {};
+
   return (
     <div class="profile_bg">
       <div class="container">
@@ -67,6 +70,8 @@ const Profile = () => {
             </div>
           </div>
         </div>
+
+        <div className="Listita"></div>
       </div>
     </div>
   );
