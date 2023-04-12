@@ -1,11 +1,15 @@
 .profile_bg {
   background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).webp");
   background-image: fixed;
-  height: 91.5vh;
+  height: max-content;
   background-size: cover;
+  background-attachment: fixed;
 }
 
-.Listita {
-  background-color: black;
-  height: 20px;
+.grid {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.envolvente {
+  display: flex;
 }

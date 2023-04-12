@@ -7,7 +7,7 @@ const { validateUser } = require("../middlewares/auth");
 //http://localhost:3001/api/favorites/getAllFavorites
 
 router.post("/getAllFavorites", (req, res) => {
-  const { id } = req.user;
+  const { id } = req.body;
   Favorites.findAll({ where: { userId: id } }).then((favorite) => {
     res.status(200).send(favorite);
   });
@@ -17,6 +17,7 @@ router.post("/getAllFavorites", (req, res) => {
 //http://localhost:3001/api/favorites/addFavorites
 
 router.post("/addFavorites", validateUser, (req, res) => {
+  //Id del user
   const { id } = req.user;
   const { idProperty } = req.body;
   console.log(idProperty);
@@ -28,14 +29,23 @@ router.post("/addFavorites", validateUser, (req, res) => {
 //ELIMINAR DE FAVORITOS
 //http://localhost:3001/api/favorites/deleteFavorites/:id
 
-router.post("/deleteFavorites/:id", validateUser, (req, res) => {
-  const id = req.params.id;
-  Favorites.destroy({ where: { id } })
-    .then((property) => {
-      property.removeUsers(req.user.id);
-      res.status(204).send(property);
+router.delete("/deleteFavorites/:id", (req, res) => {
+  const favoriteId = req.params.id;
+  Favorites.destroy({
+    where: {
+      id: favoriteId,
+    },
+  })
+    .then((rowsDeleted) => {
+      if (rowsDeleted === 0) {
+        return res.status(404).send({ message: "El favorito no existe" });
+      }
+      return res.send({ message: "Favorito eliminado exitosamente" });
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      console.error(error);
+      return res.status(500).send({ message: "Error al eliminar el favorito" });
+    });
 });
 
 module.exports = router;

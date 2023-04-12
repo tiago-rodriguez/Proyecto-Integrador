@@ -172,19 +172,19 @@ function Cards() {
 
               <div className="verMas">
                 <Nav.Link href={`/propertyDetail/${card.id}`}>
-                  <button type="button" class="btn btn-light">
+                  <button type="button" class="btn btn-primary">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-plus-square-fill"
+                      class="bi bi-chat-square-heart-fill padding"
                       viewBox="0 0 16 16"
                     >
-                      <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+                      <path d="M2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
                     </svg>
+                    Ver más
                   </button>
-                  Ver más
                 </Nav.Link>
 
                 <div className="favoritos">
@@ -198,7 +198,7 @@ function Cards() {
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-chat-square-heart-fill"
+                      class="bi bi-chat-square-heart-fill padding"
                       viewBox="0 0 16 16"
                     >
                       <path d="M2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
