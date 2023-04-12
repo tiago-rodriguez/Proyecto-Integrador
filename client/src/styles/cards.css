@@ -3,3 +3,11 @@
   text-decoration: underline;
   text-align: center;
 }
+
+.verMas {
+  display: flex;
+}
+
+.padding {
+  padding-right: 3px;
+}

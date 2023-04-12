@@ -1,14 +1,68 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Nav } from "react-bootstrap";
 import "../styles/profile.css";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const Profile = () => {
+  const { id } = useParams();
+
+  const [favorites, setFavorites] = useState([]);
+  const [properties, setProperties] = useState([]);
   const user = useSelector((state) => state.user);
-  console.log(user);
+  console.log("esto es user", user);
 
-  const handleGetFavorites = () => {};
+  useEffect(() => {
+    getAllProperties().then((propiedades) => {
+      setProperties(propiedades);
+    });
+  }, []);
+  const getAllProperties = async () => {
+    const { data } = await axios.post(
+      "http://localhost:3001/api/properties/getAllProperties"
+    );
+    //SetProperties
+    //La linea 14 en la 9
 
+    return data;
+  };
+
+  useEffect(() => {
+    getAllFavorites().then((favoritos) => {
+      setFavorites(favoritos);
+    });
+  }, [user.id]);
+
+  const getAllFavorites = async () => {
+    const { data } = await axios.post(
+      "http://localhost:3001/api/favorites/getAllFavorites",
+      {
+        id: user.id,
+      }
+    );
+
+    return data;
+  };
+
+  const handleRemoveFavorite = (id) => {
+    axios
+      .delete(`http://localhost:3001/api/favorites/deleteFavorites/${id}`)
+      .then((response) => {
+        console.log(response.data.message);
+
+        // Hacer algo en caso de que el favorito haya sido eliminado exitosamente
+      })
+      .then(() => window.location.reload(false))
+      .catch((error) => {
+        console.error(error.response.data.message);
+        // Hacer algo en caso de que haya un error al eliminar el favorito
+      });
+  };
+  console.log(favorites);
+  console.log(properties);
+  console.log(properties[0]?.title);
   return (
     <div class="profile_bg">
       <div class="container">
@@ -71,7 +125,49 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="Listita"></div>
+        <h1> Favoritos: ({favorites.length}) </h1>
+
+        <div className="row">
+          {favorites.map((favorite) => (
+            <div class="card" style={{ width: "20rem" }}>
+              <img
+                class="card-img-top"
+                src={properties[favorite.id]?.image}
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{properties[favorite.id]?.title}</h5>
+                <p class="card-text">{properties[favorite.id]?.description}</p>
+
+                <div className="envolvente">
+                  <Nav.Link href={`/propertyDetail/${favorite.propertyId}`}>
+                    <button type="button" class="btn btn-primary">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chat-square-heart-fill padding"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+                      </svg>
+                      Ver más
+                    </button>
+                  </Nav.Link>
+
+                  <button
+                    type="submit"
+                    class="btn btn-danger"
+                    onClick={() => handleRemoveFavorite(favorite.id)}
+                  >
+                    Eliminar Favorito
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
