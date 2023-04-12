@@ -1,4 +1,5 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
+
 export const setUser = createAction("SET_USER");
 export const userLogout = createAction("USER_LOGOUT");
 export const addFavorites = createAction("ADD_FAVORITES");
@@ -13,6 +14,7 @@ const initialState = {
   admin: null,
   properties: [],
 };
+
 const userReducer = createReducer(initialState, {
   [setUser]: (state, action) => action.payload,
   [userLogout]: (state, action) => ({}),

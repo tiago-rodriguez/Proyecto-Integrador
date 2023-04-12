@@ -107,32 +107,4 @@ router.post("/getAllProperties", (req, res) => {
   });
 });
 
-//AGREGAR A FAVORITOS
-//http://localhost:3001/api/properties/addFavorites
-
-router.post("/addFavorites", validateUser, (req, res) => {
-  const { id } = req.body;
-  console.log("este es el id", id);
-  Properties.findByPk(id)
-    .then((property) => {
-      console.log(req.user);
-      req.user.addProperty(property); // aquí se agrega la propiedad a los favoritos del usuario
-      res.status(201).send(property);
-    })
-    .catch((error) => console.log(error));
-});
-
-//ELIMINAR DE FAVORITOS
-//http://localhost:3001/api/properties/deleteFavorites/:id
-
-router.post("/deleteFavorites/:id", validateUser, (req, res) => {
-  const { id } = req.params;
-  Properties.findByPk(id)
-    .then((property) => {
-      property.removeUsers(req.user.id);
-      res.status(204).send(property);
-    })
-    .catch((error) => console.log(error));
-});
-
 module.exports = router;

@@ -3,7 +3,7 @@ const db = require("../config/db");
 
 const array = [
   {
-    title: "Departamento 1 Ambiente - Barrio Norte, Capital Federal",
+    title: "Departamento 1 Ambiente - Barrio Norte",
     adress: " Azucena Villaflor 500",
     city: " Buenos Aires",
     country: " Argentina",
@@ -140,8 +140,7 @@ const array = [
       "https://imgar.zonapropcdn.com/avisos/1/00/51/10/28/77/360x266/1853834646.jpg",
   },
   {
-    title:
-      "Alquiler Departamento 2 Amb C/cochera en Torre de Categoria C/amenities - Palermo",
+    title: "Alquiler Departamento 2 Amb C/cochera Palermo",
     adress: "Thames al 2300",
     city: "Buenos Aires",
     country: "Argentina",
@@ -176,7 +175,7 @@ const array = [
   },
 
   {
-    title: "Caba Recoleta Alquiler Departamento Ulrich Propiedades",
+    title: "Caba Recoleta Alquiler Departamento",
     adress: "Pacheco de Melo 1967",
     city: "Buenos Aires",
     country: "Argentina",

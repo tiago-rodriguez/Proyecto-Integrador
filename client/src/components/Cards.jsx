@@ -10,6 +10,7 @@ import { addFavorites } from "../store/user";
 
 function Cards() {
   const [busqueda, setBusqueda] = useState("");
+  const user = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
 
@@ -84,9 +85,11 @@ function Cards() {
     const token = window.localStorage.getItem("token");
     axios
       .post(
-        "http://localhost:3001/api/properties/addFavorites",
+        "http://localhost:3001/api/favorites/addFavorites",
         {
-          id: id,
+          idProperty: id,
+
+          id: user.id,
 
           token,
         },
