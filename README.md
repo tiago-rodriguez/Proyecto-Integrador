@@ -4,7 +4,7 @@ En este proyecto integrador se veran reflejadas la mayoria de las tecnologias en
 
 ## Stack de tecnologias
 
-**Client:** React, Redux, Axios, React Bootstrap y CSS
+**Client:** React, Redux, Axios, Bootstrap,React Bootstrap y CSS
 
 **Server:** NodeJS, Nodemon, Express, Sequelize, Postgres, Bcrypt, JWT.
 
