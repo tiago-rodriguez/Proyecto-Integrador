@@ -16,6 +16,7 @@ import PropertyCreate from "./components/PropertyCreate";
 import PropertiesTable from "./components/PropertiesTable";
 import PropertyEdit from "./components/PropertyEdit";
 import ProfileEdit from "./components/ProfileEdit";
+import DatesTable from "./components/Dates";
 
 function App() {
   const [properties, setProperties] = useState([]);
@@ -69,6 +70,7 @@ function App() {
         <Route path="/createPropertie" element={<PropertyCreate />} />
         <Route path="/editPropertie/:id" element={<PropertyEdit />} />
         <Route path="/editUser/:id" element={<ProfileEdit />} />
+        <Route path="/dates" element={<DatesTable />} />
       </Routes>
     </>
   );

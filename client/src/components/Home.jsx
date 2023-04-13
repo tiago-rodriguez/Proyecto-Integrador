@@ -15,8 +15,8 @@ function Home() {
             <h1> Gracias por ingresar {user.nombre} bienvenido!! </h1>
           ) : (
             <h1>
-              Hola bienvenido a House of Dev Para una mejor experiencia Ingresa
-              o registrate!!
+              Bienvenido a House of Dev Para una mejor experiencia Ingresa o
+              registrate!!
             </h1>
           )}
 

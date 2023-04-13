@@ -45,24 +45,24 @@ const Profile = () => {
 
     return data;
   };
-
   const handleRemoveFavorite = (id) => {
-    axios
-      .delete(`http://localhost:3001/api/favorites/deleteFavorites/${id}`)
-      .then((response) => {
-        console.log(response.data.message);
-
-        // Hacer algo en caso de que el favorito haya sido eliminado exitosamente
-      })
-      .then(() => window.location.reload(false))
-      .catch((error) => {
-        console.error(error.response.data.message);
-        // Hacer algo en caso de que haya un error al eliminar el favorito
-      });
+    const confirmed = window.confirm(
+      "¿Está seguro de que desea eliminar esta propiedad de sus favoritos?"
+    );
+    if (confirmed) {
+      axios
+        .delete(`http://localhost:3001/api/favorites/deleteFavorites/${id}`)
+        .then((response) => {
+          console.log(response.data.message);
+          // Hacer algo en caso de que el favorito haya sido eliminado exitosamente
+        })
+        .then(() => window.location.reload(false))
+        .catch((error) => {
+          console.error(error.response.data.message);
+        });
+    }
   };
-  console.log(favorites);
-  console.log(properties);
-  console.log(properties[0]?.title);
+
   return (
     <div class="profile_bg">
       <div class="container">
@@ -125,19 +125,24 @@ const Profile = () => {
           </div>
         </div>
 
-        <h1> Favoritos: ({favorites.length}) </h1>
+        <h1 className="texto_favoritos"> Favoritos: ({favorites.length}) </h1>
 
-        <div className="row">
+        <div className="row mt-3 container_cards">
           {favorites.map((favorite) => (
-            <div class="card" style={{ width: "20rem" }}>
+            <div class="card ms-3 mb-3" style={{ width: "20rem" }}>
               <img
-                class="card-img-top"
-                src={properties[favorite.id]?.image}
+                class="card-img-top mt-3 caja_imagen "
+                src={properties[favorite.propertyId]?.image}
                 alt="Card image cap"
               />
               <div class="card-body">
-                <h5 class="card-title">{properties[favorite.id]?.title}</h5>
-                <p class="card-text">{properties[favorite.id]?.description}</p>
+                <h5 class="card-title title_size">
+                  {properties[favorite.propertyId]?.title}
+                </h5>
+                <p class="card-text description_size">
+                  {properties[favorite.propertyId]?.description.slice(0, 120)}
+                  ...
+                </p>
 
                 <div className="envolvente">
                   <Nav.Link href={`/propertyDetail/${favorite.propertyId}`}>
@@ -147,10 +152,10 @@ const Profile = () => {
                         width="16"
                         height="16"
                         fill="currentColor"
-                        class="bi bi-chat-square-heart-fill padding"
+                        class="bi bi-plus-circle-fill padding"
                         viewBox="0 0 16 16"
                       >
-                        <path d="M2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
                       </svg>
                       Ver más
                     </button>

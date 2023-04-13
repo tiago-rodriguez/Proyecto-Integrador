@@ -98,17 +98,25 @@ const NaView = () => {
                       class="collapse navbar-collapse"
                       id="navbarSupportedContent"
                     >
-                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                          <Nav className="me-auto">
-                            <Nav.Link href="/propiedades">
-                              <div className="list_item text-white">
-                                Propiedades
-                              </div>
-                            </Nav.Link>
-                          </Nav>
-                        </li>
-                      </ul>
+                      <li class="nav-item">
+                        <Nav className="me-auto">
+                          <Nav.Link href="/propiedades">
+                            <div className="list_item text-white">
+                              Propiedades
+                            </div>
+                          </Nav.Link>
+                        </Nav>
+                      </li>
+
+                      <li class="nav-item">
+                        <Nav className="me-auto">
+                          <Nav.Link href="/profile">
+                            <div className="list_item text-white ">
+                              Mi perfil
+                            </div>
+                          </Nav.Link>
+                        </Nav>
+                      </li>
                     </div>
                     <div></div>
                   </ul>
@@ -133,7 +141,7 @@ const NaView = () => {
                     </>
                   ) : (
                     <>
-                      <ul class="navbar-nav mx-auto">
+                      <ul class="navbar-nav">
                         {/* <li class="nav-item">
                           <Nav className="me-auto">
                             <Nav.Link href="/">
@@ -144,17 +152,7 @@ const NaView = () => {
                           </Nav>
                         </li> */}
 
-                        <li class="nav-item">
-                          <Nav className="me-auto">
-                            <Nav.Link href="/profile">
-                              <div className="list_item text-white ">
-                                Mi perfil
-                              </div>
-                            </Nav.Link>
-                          </Nav>
-                        </li>
-
-                        <div>
+                        <div className="usuario_navbar">
                           <h6>
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +184,7 @@ const NaView = () => {
                   )}
                 </>
               ) : (
-                <div class="container-fluid">
+                <div class="container-fluid nav-flex">
                   <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                       <Nav className="me-auto">
@@ -208,7 +206,7 @@ const NaView = () => {
 
                     <li class="nav-item">
                       <Nav className="me-auto">
-                        <Nav.Link href="/">
+                        <Nav.Link href="/dates">
                           <div className="list_item text-white">Ver Citas</div>
                         </Nav.Link>
                       </Nav>
@@ -241,7 +239,9 @@ const NaView = () => {
                         </Nav.Link>
                       </Nav>
                     </li>
+                  </ul>
 
+                  <div className="boton_cerrar_sesion usuario_navbar">
                     <div className="contenedor_usuario">
                       <h6>
                         <svg
@@ -260,18 +260,16 @@ const NaView = () => {
                         Bienvenido {user.nombre}
                       </h6>
                     </div>
+                  </div>
 
-                    <div className="boton_cerrar_sesion">
-                      <Link to="/home">
-                        <button
-                          class="btn btn-outline-light"
-                          onClick={handleLogOut}
-                        >
-                          Cerrar sesion
-                        </button>
-                      </Link>
-                    </div>
-                  </ul>
+                  <Link to="/home">
+                    <button
+                      class="btn btn-outline-light"
+                      onClick={handleLogOut}
+                    >
+                      Cerrar sesion
+                    </button>
+                  </Link>
                 </div>
               )}
             </div>
