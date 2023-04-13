@@ -1,7 +1,7 @@
 .profile_bg {
   background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).webp");
   background-image: fixed;
-  height: max-content;
+  height: fit-content;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -12,4 +12,29 @@
 
 .envolvente {
   display: flex;
+}
+
+.texto_favoritos {
+  text-align: center;
+  text-decoration: underline;
+  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 25px;
+}
+
+.caja_imagen {
+  height: 218px;
+  object-fit: cover;
+}
+
+.description_size {
+  height: 110px;
+}
+
+.title_size {
+  height: 70px;
+}
+
+.container_cards {
+  justify-content: center;
 }

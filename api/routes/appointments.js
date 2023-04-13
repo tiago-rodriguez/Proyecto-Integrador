@@ -14,4 +14,12 @@ router.post("/new/:idProperty", validateUser, (req, res) => {
     .catch((error) => console.log(error));
 });
 
+//OBTIENE TODAS LAS CITAS
+//http://localhost:3001/api/appointments/getAllAppointments
+router.post("/getAllAppointments", (req, res) => {
+  Appointments.findAll().then((appointment) => {
+    res.status(200).send(appointment);
+  });
+});
+
 module.exports = router;

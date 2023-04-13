@@ -74,9 +74,15 @@ function Appointment({ show, handleClose }) {
           <Button variant="secondary" onClick={handleClose}>
             Cerrar
           </Button>
-          <Button variant="primary" onClick={handleSubmit}>
-            Agendar
-          </Button>
+          {date.length > 15 ? (
+            <Button variant="primary" onClick={handleSubmit}>
+              Agendar
+            </Button>
+          ) : (
+            <Button variant="secondary" disabled>
+              Agendar
+            </Button>
+          )}
         </Modal.Footer>
       </Modal>
     </>

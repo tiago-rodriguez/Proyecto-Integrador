@@ -7,9 +7,13 @@ import { useDispatch } from "react-redux";
 import { addFavorites } from "../store/user";
 import { Button } from "react-bootstrap";
 import Appointment from "./Appointments";
+import { message } from "antd";
+import { useSelector } from "react-redux";
 
 function PropertyDetail() {
   const dispatch = useDispatch();
+  const [messageApi, contextHolder] = message.useMessage();
+  const user = useSelector((state) => state.user);
   const [propertie, setPropertie] = useState([]);
   const { id } = useParams();
 
@@ -21,12 +25,41 @@ function PropertyDetail() {
 
   //-------->Estados para mostrar Modal<----------
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    window.location.reload(false);
+  };
   const handleShow = () => setShow(true);
   //----------------------------------------------
 
+  // => setShow(false);
+
+  const handleAddFavorites = (id) => {
+    const token = window.localStorage.getItem("token");
+    axios
+      .post(
+        "http://localhost:3001/api/favorites/addFavorites",
+        {
+          idProperty: id,
+
+          id: user.id,
+
+          token,
+        },
+        { withCredentials: true }
+      )
+      .then((res) => dispatch(addFavorites(res.data)));
+    messageApi
+      .open({
+        type: "success",
+        content: "Propiedad agregada a favoritos",
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <>
+      {contextHolder}
       <div className="card">
         <div className="imagenes">
           <img className="imagen_1" src={propertie.image}></img>
@@ -224,13 +257,17 @@ function PropertyDetail() {
           <p></p>
         </div>
         <div className="favoritos">
-          <button type="button" class="btn btn-success">
+          <button
+            type="button"
+            class="btn btn-success"
+            onClick={() => handleAddFavorites(propertie.id)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-chat-square-heart-fill"
+              class="bi bi-chat-square-heart-fill padding"
               viewBox="0 0 16 16"
             >
               <path d="M2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
@@ -239,6 +276,16 @@ function PropertyDetail() {
           </button>
 
           <Button className="buttonStyle" type="submit" onClick={handleShow}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-calendar2-plus-fill"
+              viewBox="0 0 16 16"
+            >
+              <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 3.5v1c0 .276.244.5.545.5h10.91c.3 0 .545-.224.545-.5v-1c0-.276-.244-.5-.546-.5H2.545c-.3 0-.545.224-.545.5zm6.5 5a.5.5 0 0 0-1 0V10H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V11H10a.5.5 0 0 0 0-1H8.5V8.5z" />
+            </svg>
             Agendar Visita
           </Button>
         </div>

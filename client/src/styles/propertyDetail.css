@@ -34,3 +34,13 @@
   margin-left: 51px;
   margin-bottom: 5px;
 }
+
+.container-flex {
+  width: 100%;
+  display: block;
+}
+
+.div-size {
+  width: 50%;
+  flex-direction: row;
+}

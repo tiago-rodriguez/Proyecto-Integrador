@@ -6,10 +6,6 @@
   background-color: #123ac8;
 }
 
-.contenedor_usuario {
-  margin-left: 50px;
-}
-
 .contenedor_vista_perfiles {
   margin-left: 50px;
 }
@@ -38,4 +34,13 @@
 
 .registro {
   margin-right: 5px;
+}
+
+.usuario_navbar {
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.nav-flex {
+  display: inline-flex;
 }
