@@ -37,7 +37,7 @@ function Cards() {
     filtrar(e.target.value);
   };
 
-  //Esta función filtra la matriz "properties" por un término de búsqueda específico en la propiedad "title" y
+  //Esta función filtra la matriz "properties" por un término de búsqueda específico en la propiedad "title", "locate" y "country"
   //actualiza la matriz "properties" con los elementos que coinciden con la búsqueda.
   const filtrar = (terminoDeBusqueda) => {
     var resultadoBusqueda = properties.filter((element) => {
@@ -58,7 +58,11 @@ function Cards() {
         return element;
       }
     });
-    setProperties(resultadoBusqueda);
+    if (terminoDeBusqueda === "") {
+      window.location.reload(false);
+    } else {
+      setProperties(resultadoBusqueda);
+    }
   };
 
   //Ordena los precios de menor a mayor

@@ -15,6 +15,8 @@ router.post("/getAllFavorites", (req, res) => {
 
 //AGREGAR A FAVORITOS
 //http://localhost:3001/api/favorites/addFavorites
+//Se extrae el ID del usuario de req.user.id y el ID de la propiedad de req.body.idProperty.
+//Finalmente, se crea un nuevo registro en la tabla Favorites, con el ID del usuario y el ID de la propiedad.
 
 router.post("/addFavorites", validateUser, (req, res) => {
   //Id del user

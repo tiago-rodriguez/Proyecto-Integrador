@@ -73,7 +73,7 @@ const Login = () => {
       {contextHolder}
       <div className="bg ">
         <FormContainer>
-          <div class="position-absolute top-50 start-50 translate-middle bg-light shadow-lg size">
+          <div class="position-absolute top-50 start-50 translate-middle bg-light shadow-lg size login_contenedor ">
             <h3>Iniciar sesión</h3>
             <Form>
               <Form.Group controlId="email">

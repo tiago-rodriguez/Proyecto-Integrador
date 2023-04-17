@@ -11,6 +11,7 @@ function Card({
   image_4,
   image_5,
   description,
+  price,
 }) {
   return (
     <div className="card h-100">
@@ -51,6 +52,8 @@ function Card({
             {description.slice(0, 152)}[...]
           </h6>
         </p>
+
+        <h6> ${price} </h6>
       </div>
     </div>
   );

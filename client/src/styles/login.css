@@ -7,7 +7,15 @@ html {
   background-image: fixed;
   height: 91.5vh;
   background-size: cover;
+  background-attachment: fixed;
 }
 .size {
   padding: 45px;
+}
+
+.login_contenedor {
+  position: relative;
+  z-index: 1;
+  margin-top: 10px;
+  width: 390px;
 }
