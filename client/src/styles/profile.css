@@ -1,7 +1,7 @@
 .profile_bg {
   background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).webp");
   background-image: fixed;
-  height: fit-content;
+  height: 218vh;
   background-size: cover;
   background-attachment: fixed;
 }

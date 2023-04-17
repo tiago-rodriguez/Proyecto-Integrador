@@ -16,6 +16,7 @@ function ProfileEdit() {
     nombre: "",
     apellido: "",
     cellPhone: "",
+    email: "",
   });
 
   const handleInput = (e) => {
@@ -32,12 +33,25 @@ function ProfileEdit() {
     const newErrors = {};
     if (!newUser.nombre) {
       newErrors.nombre = "Debe ingresar un nombre";
-    } else if (newUser.nombre.length < 5) {
-      newErrors.nombre = "El nombre debe tener al menos 5 caracteres";
+    } else if (newUser.nombre.length < 3) {
+      newErrors.nombre = "El nombre debe tener al menos 3 caracteres";
     } else if (!/^[a-zA-Z\s]+$/.test(newUser.nombre)) {
       newErrors.nombre = "El nombre solo puede contener letras y espacios";
     } else if (!/^[A-Z][a-zA-Z\s]*$/.test(newUser.nombre)) {
       newErrors.nombre = "El nombre debe comenzar con mayúscula";
+    }
+    if (!newUser.apellido) {
+      newErrors.apellido = "Debe ingresar un apellido";
+    } else if (newUser.apellido.length < 3) {
+      newErrors.apellido = "El apellido debe tener al menos 3 caracteres";
+    } else if (!/^[a-zA-Z\s]+$/.test(newUser.apellido)) {
+      newErrors.apellido = "El apellido solo puede contener letras y espacios";
+    } else if (!/^[A-Z][a-zA-Z\s]*$/.test(newUser.apellido)) {
+      newErrors.apellido = "El apellido debe comenzar con mayúscula";
+    }
+    if (newUser.cellPhone && newUser.cellPhone.length > 10) {
+      alert("El número de teléfono debe tener máximo 10 caracteres.");
+      return;
     }
     setErrors(newErrors);
 
@@ -74,22 +88,24 @@ function ProfileEdit() {
       {contextHolder}
 
       <h1 className="text">Edición de datos:</h1>
+      <h6 className="text">Puedes poner tus mismos datos de antes</h6>
       <form className="formulario" onSubmit={handleSubmit}>
-        <div>
-          <label>Título:</label>
-          <input
+        <Form.Group className="form-group-custom" controlId="nombre">
+          <Form.Label>Nombre:</Form.Label>
+          <Form.Control
             name="nombre"
-            id="nombre"
-            required
             type="text"
+            required
+            maxLength={20}
             placeholder={user.nombre}
             value={newUser.nombre}
             onChange={handleInput}
           />
-          {errors.nombre && <span className="error">{errors.nombre}</span>}
-        </div>
+        </Form.Group>
+        {errors.nombre && <span className="error">{errors.nombre}</span>}
+
         <br></br>
-        <p></p>
+
         <Form.Group className="form-group-custom" controlId="apellido">
           <Form.Label>Apellido:</Form.Label>
           <Form.Control
@@ -102,6 +118,8 @@ function ProfileEdit() {
             onChange={handleInput}
           />
         </Form.Group>
+        {errors.apellido && <span className="error">{errors.apellido}</span>}
+        <br></br>
         <br></br>
         <Form.Group className="form-group-custom" controlId="cellPhone">
           <Form.Label>Celular:</Form.Label>
@@ -110,8 +128,21 @@ function ProfileEdit() {
             type="number"
             required
             placeholder={user.cellPhone}
-            maxLength={20}
+            maxLength={10}
             value={newUser.cellPhone}
+            onChange={handleInput}
+          />
+        </Form.Group>
+        <br></br>
+        <Form.Group className="form-group-custom" controlId="email">
+          <Form.Label>Email:</Form.Label>
+          <Form.Control
+            name="email"
+            type="email"
+            required
+            maxLength={20}
+            placeholder={user.email}
+            value={newUser.email}
             onChange={handleInput}
           />
         </Form.Group>

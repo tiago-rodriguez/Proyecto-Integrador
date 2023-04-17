@@ -15,20 +15,20 @@ function Appointment({ show, handleClose }) {
 
   const [date, setDate] = useState("");
 
+  //   Esta función handleSubmit es un controlador de eventos que se utiliza para enviar un formulario de citas
+  //   a través de una solicitud POST utilizando la biblioteca Axios.
+  //  En resumen, la función toma los datos del formulario, incluyendo la fecha y el ID del usuario,
+  //  y los envía al servidor como un objeto JSON.
   const handleSubmit = (e) => {
     e.preventDefault();
     const token = window.localStorage.getItem("token");
 
     axios
-      .post(
-        `http://localhost:3001/api/appointments/new/${id}`,
-        {
-          date: date,
-          userId: user.id,
-          token,
-        },
-        { withCredentials: true }
-      )
+      .post(`http://localhost:3001/api/appointments/new/${id}`, {
+        date: date,
+        userId: user.id,
+        token,
+      })
       .then((res) => res.data);
     handleClose(); //Se cierra el modal.
     messageApi

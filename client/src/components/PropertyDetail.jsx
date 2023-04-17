@@ -23,12 +23,16 @@ function PropertyDetail() {
       .then((data) => setPropertie(data));
   }, [id]);
 
+  //Modal se usa para mostrar contenido que necesita la atencion del usuario.
+  //La función handleShow se utiliza para mostrar el modal, mientras que la función handleClose se utiliza para ocultarlo.
   //-------->Estados para mostrar Modal<----------
   const [show, setShow] = useState(false);
-  const handleClose = () => {
-    setShow(false);
-    window.location.reload(false);
-  };
+  // const handleClose = () => {
+  //   setShow(false);
+  //   window.location.reload(false);
+  // };
+
+  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   //----------------------------------------------
 

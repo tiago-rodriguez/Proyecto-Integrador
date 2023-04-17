@@ -5,6 +5,7 @@ import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "../styles/register.css";
 import { message } from "antd";
+import { Nav } from "react-bootstrap";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -74,7 +75,7 @@ const Register = () => {
       <div className="register_bg">
         <FormContainer>
           <div>
-            <div className="position-absolute top-50 start-50 translate-middle bg-light shadow-lg size_2 mt-3">
+            <div className="position-absolute top-50 start-50 translate-middle bg-light shadow-lg size_2 mt-3 register_contenedor">
               <Form>
                 <h3>Registrate</h3>
                 <Form.Group controlId="nombre">
@@ -165,6 +166,17 @@ const Register = () => {
                   </div>
                 </Form.Group>
               </Form>
+              <Form.Group controlId="submit">
+                <div>
+                  <Nav>
+                    <Nav.Link href="/login">
+                      <Button type="submit" className="my-2" variant="dark">
+                        Volver
+                      </Button>
+                    </Nav.Link>
+                  </Nav>
+                </div>
+              </Form.Group>
             </div>
           </div>
         </FormContainer>

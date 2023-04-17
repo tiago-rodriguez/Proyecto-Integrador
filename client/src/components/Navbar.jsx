@@ -107,8 +107,23 @@ const NaView = () => {
                           </Nav.Link>
                         </Nav>
                       </li>
+                    </div>
+                    <div></div>
+                  </ul>
 
-                      <li class="nav-item">
+                  {!user.nombre ? (
+                    <></>
+                  ) : (
+                    <>
+                      <ul class="navbar-nav">
+                        <Nav className="me-auto">
+                          <Nav.Link href="/propiedades">
+                            <div className="list_item text-white">
+                              Mis citas
+                            </div>
+                          </Nav.Link>
+                        </Nav>
+
                         <Nav className="me-auto">
                           <Nav.Link href="/profile">
                             <div className="list_item text-white ">
@@ -116,41 +131,6 @@ const NaView = () => {
                             </div>
                           </Nav.Link>
                         </Nav>
-                      </li>
-                    </div>
-                    <div></div>
-                  </ul>
-
-                  {!user.nombre ? (
-                    <>
-                      <div className="registro">
-                        <Link to="/register">
-                          <button class="btn btn-outline-light" type="submit">
-                            Registrarse
-                          </button>
-                        </Link>
-                      </div>
-
-                      <div>
-                        <Link to="/login">
-                          <button class="btn btn-outline-light" type="submit">
-                            Ingresar
-                          </button>
-                        </Link>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <ul class="navbar-nav">
-                        {/* <li class="nav-item">
-                          <Nav className="me-auto">
-                            <Nav.Link href="/">
-                              <div className="list_item text-white">
-                                Agenda tu visita
-                              </div>
-                            </Nav.Link>
-                          </Nav>
-                        </li> */}
 
                         <div className="usuario_navbar">
                           <h6>
