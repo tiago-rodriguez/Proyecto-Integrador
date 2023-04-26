@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { Nav, Placeholder } from "react-bootstrap";
 import { message } from "antd";
 import { Form } from "react-bootstrap";
-import "../styles/form.css";
 import { useSelector } from "react-redux";
 
 function ProfileEdit() {
@@ -89,68 +88,71 @@ function ProfileEdit() {
 
       <h1 className="text">Edición de datos:</h1>
       <h6 className="text">Puedes poner tus mismos datos de antes</h6>
-      <form className="formulario" onSubmit={handleSubmit}>
-        <Form.Group className="form-group-custom" controlId="nombre">
-          <Form.Label>Nombre:</Form.Label>
-          <Form.Control
-            name="nombre"
-            type="text"
-            required
-            maxLength={20}
-            placeholder={user.nombre}
-            value={newUser.nombre}
-            onChange={handleInput}
-          />
-        </Form.Group>
-        {errors.nombre && <span className="error">{errors.nombre}</span>}
+      <div className="d-flex justify-content-center">
+        <form className="formulario" onSubmit={handleSubmit}>
+          <Form.Group controlId="nombre">
+            <Form.Label>Nombre:</Form.Label>
+            <Form.Control
+              name="nombre"
+              type="text"
+              required
+              maxLength={20}
+              placeholder={user.nombre}
+              value={newUser.nombre}
+              onChange={handleInput}
+            />
+          </Form.Group>
+          {errors.nombre && <span className="error">{errors.nombre}</span>}
 
-        <br></br>
+          <br></br>
 
-        <Form.Group className="form-group-custom" controlId="apellido">
-          <Form.Label>Apellido:</Form.Label>
-          <Form.Control
-            name="apellido"
-            type="area"
-            required
-            maxLength={20}
-            placeholder={user.apellido}
-            value={newUser.apellido}
-            onChange={handleInput}
-          />
-        </Form.Group>
-        {errors.apellido && <span className="error">{errors.apellido}</span>}
-        <br></br>
-        <br></br>
-        <Form.Group className="form-group-custom" controlId="cellPhone">
-          <Form.Label>Celular:</Form.Label>
-          <Form.Control
-            name="cellPhone"
-            type="number"
-            required
-            placeholder={user.cellPhone}
-            maxLength={10}
-            value={newUser.cellPhone}
-            onChange={handleInput}
-          />
-        </Form.Group>
-        <br></br>
-        <Form.Group className="form-group-custom" controlId="email">
-          <Form.Label>Email:</Form.Label>
-          <Form.Control
-            name="email"
-            type="email"
-            required
-            maxLength={20}
-            placeholder={user.email}
-            value={newUser.email}
-            onChange={handleInput}
-          />
-        </Form.Group>
-        <br></br>
-        <button type="submit" class="btn btn-success">
-          Guardar
-        </button>
-      </form>
+          <Form.Group controlId="apellido">
+            <Form.Label>Apellido:</Form.Label>
+            <Form.Control
+              name="apellido"
+              type="area"
+              required
+              maxLength={20}
+              placeholder={user.apellido}
+              value={newUser.apellido}
+              onChange={handleInput}
+            />
+          </Form.Group>
+          {errors.apellido && <span className="error">{errors.apellido}</span>}
+          <br></br>
+          <br></br>
+          <Form.Group controlId="cellPhone">
+            <Form.Label>Celular:</Form.Label>
+            <Form.Control
+              name="cellPhone"
+              type="number"
+              required
+              placeholder={user.cellPhone}
+              maxLength={10}
+              value={newUser.cellPhone}
+              onChange={handleInput}
+            />
+          </Form.Group>
+          <br></br>
+          <Form.Group controlId="email">
+            <Form.Label>Email:</Form.Label>
+            <Form.Control
+              name="email"
+              type="email"
+              required
+              maxLength={20}
+              placeholder={user.email}
+              value={newUser.email}
+              onChange={handleInput}
+            />
+          </Form.Group>
+          <br></br>
+          <button type="submit" class="btn btn-success">
+            Guardar
+          </button>
+        </form>
+      </div>
+
       <Nav>
         <Nav.Link href="/profile">
           <button type="button" class="btn btn-primary">

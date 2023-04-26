@@ -49,7 +49,7 @@ const NaView = () => {
       <Navbar.Brand className="brand">
         <nav className="navbar navbar-expand-lg shadow-lg">
           <div class="container-fluid">
-            <Link to="/home">
+            <Link to="/">
               <img src="Logo.png" width="70" />
             </Link>
             <button
@@ -70,7 +70,7 @@ const NaView = () => {
                   <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                       <Nav className="me-auto">
-                        <Nav.Link href="/home">
+                        <Nav.Link href="/">
                           <div className="list_item text-white ">Home</div>
                         </Nav.Link>
                       </Nav>
@@ -78,7 +78,7 @@ const NaView = () => {
 
                     <li class="nav-item">
                       <Nav className="me-auto">
-                        <Nav.Link href="/">
+                        <Nav.Link>
                           <div className="list_item text-white ">
                             Nuestros servicios
                           </div>
@@ -88,8 +88,18 @@ const NaView = () => {
 
                     <li class="nav-item">
                       <Nav className="me-auto">
-                        <Nav.Link href="/">
+                        <Nav.Link>
                           <div className="list_item text-white">Nosotros</div>
+                        </Nav.Link>
+                      </Nav>
+                    </li>
+
+                    <li class="nav-item">
+                      <Nav className="me-auto">
+                        <Nav.Link href="/propiedades">
+                          <div className="list_item text-white">
+                            Propiedades
+                          </div>
                         </Nav.Link>
                       </Nav>
                     </li>
@@ -97,18 +107,7 @@ const NaView = () => {
                     <div
                       class="collapse navbar-collapse"
                       id="navbarSupportedContent"
-                    >
-                      <li class="nav-item">
-                        <Nav className="me-auto">
-                          <Nav.Link href="/propiedades">
-                            <div className="list_item text-white">
-                              Propiedades
-                            </div>
-                          </Nav.Link>
-                        </Nav>
-                      </li>
-                    </div>
-                    <div></div>
+                    ></div>
                   </ul>
 
                   {!user.nombre ? (
@@ -152,7 +151,7 @@ const NaView = () => {
                           </h6>
                         </div>
                       </ul>
-                      <Link to="/home">
+                      <Link to="/">
                         <button
                           class="btn btn-outline-light"
                           onClick={handleLogOut}
@@ -168,7 +167,7 @@ const NaView = () => {
                   <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                       <Nav className="me-auto">
-                        <Nav.Link href="/home">
+                        <Nav.Link href="/">
                           <div className="list_item text-white ">Home</div>
                         </Nav.Link>
                       </Nav>
@@ -242,7 +241,7 @@ const NaView = () => {
                     </div>
                   </div>
 
-                  <Link to="/home">
+                  <Link to="/">
                     <button
                       class="btn btn-outline-light"
                       onClick={handleLogOut}

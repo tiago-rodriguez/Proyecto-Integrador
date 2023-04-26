@@ -1,7 +1,7 @@
 .register_bg {
   background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).webp");
   background-image: fixed;
-  height: 100vh;
+  height: 95vh;
   background-size: cover;
 }
 
