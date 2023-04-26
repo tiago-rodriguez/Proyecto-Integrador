@@ -36,10 +36,6 @@ const Login = () => {
     if (!email || email === "")
       newErrors.email = "Porfavor ingresa un email valido";
 
-    messageApi.open({
-      type: "error",
-      content: "ERROR DE CONTRASEÑA Y/O USUARIO",
-    });
     return newErrors;
   };
 
@@ -62,7 +58,7 @@ const Login = () => {
         );
         window.localStorage.setItem("token", data[1]);
         dispatch(setUser(data[0]));
-        navigate("/home");
+        navigate("/");
         console.log("Usuario logueado con exito", field.email);
       } catch (error) {}
     }
