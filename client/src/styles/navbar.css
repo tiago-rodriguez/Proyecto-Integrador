@@ -16,10 +16,6 @@
   margin-left: 50px;
 }
 
-.boton_cerrar_sesion {
-  margin-left: 70px;
-}
-
 .brand,
 .list_item {
   text-decoration: none;
@@ -47,6 +43,8 @@
   margin-right: 10px;
 }
 
-.nav-flex {
-  display: inline-flex;
+.navbar_admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
