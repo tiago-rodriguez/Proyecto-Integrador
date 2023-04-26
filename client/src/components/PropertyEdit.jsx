@@ -130,214 +130,219 @@ function PropertyEdit() {
       {contextHolder}
       <div>
         <h1 className="text">Edita tu propiedad!!</h1>
-        <form className="formulario" onSubmit={handleSubmit}>
-          <Form.Group className="form-group-custom" controlId="title">
-            <Form.Label>Titulo:</Form.Label>
-            <Form.Control
-              name="title"
-              type="text"
-              required
-              placeholder={propertie.title}
-              maxLength={100}
-              value={newProperty.title}
-              onChange={handleInput}
-            />
-          </Form.Group>
-          <br></br>
-          <Form.Group className="form-group-custom" controlId="description">
-            <Form.Label>Descripción:</Form.Label>
-            <Form.Control
-              name="description"
-              as="textarea"
-              rows={3}
-              required
-              placeholder={propertie.description}
-              maxLength={100}
-              value={newProperty.description}
-              onChange={handleInput}
-            />
-          </Form.Group>
-          <br></br>
-          <Form.Group className="form-group-custom" controlId="adress">
-            <Form.Label>Direccion:</Form.Label>
-            <Form.Control
-              name="adress"
-              type="text"
-              required
-              placeholder={propertie.adress}
-              maxLength={50}
-              value={newProperty.adress}
-              onChange={handleInput}
-            />
-          </Form.Group>
-          <br></br>
+        <div className="d-flex justify-content-center">
+          <form className="formulario" onSubmit={handleSubmit}>
+            <Form.Group controlId="title">
+              <Form.Label>Titulo:</Form.Label>
+              <Form.Control
+                name="title"
+                type="text"
+                required
+                placeholder={propertie.title}
+                maxLength={100}
+                value={newProperty.title}
+                onChange={handleInput}
+              />
+            </Form.Group>
+            <br></br>
+            <Form.Group controlId="description">
+              <Form.Label>Descripción:</Form.Label>
+              <Form.Control
+                name="description"
+                as="textarea"
+                rows={3}
+                required
+                placeholder={propertie.description}
+                maxLength={100}
+                value={newProperty.description}
+                onChange={handleInput}
+              />
+            </Form.Group>
+            <br></br>
+            <Form.Group controlId="adress">
+              <Form.Label>Direccion:</Form.Label>
+              <Form.Control
+                name="adress"
+                type="text"
+                required
+                placeholder={propertie.adress}
+                maxLength={50}
+                value={newProperty.adress}
+                onChange={handleInput}
+              />
+            </Form.Group>
+            <br></br>
 
-          <Form.Group className="form-group-custom" controlId="country">
-            <Form.Label>Pais:</Form.Label>
-            <Form.Control
-              name="country"
-              type="text"
-              maxLength={50}
-              required
-              placeholder={propertie.country}
-              value={newProperty.country}
-              onChange={handleInput}
-            />
-          </Form.Group>
+            <Form.Group controlId="country">
+              <Form.Label>Pais:</Form.Label>
+              <Form.Control
+                name="country"
+                type="text"
+                maxLength={50}
+                required
+                placeholder={propertie.country}
+                value={newProperty.country}
+                onChange={handleInput}
+              />
+            </Form.Group>
 
-          <Form.Group className="form-group-custom" controlId="city">
-            <Form.Label>Ciudad:</Form.Label>
-            <Form.Control
-              name="city"
-              type="text"
-              maxLength={50}
-              required
-              placeholder={propertie.city}
-              value={newProperty.city}
-              onChange={handleInput}
-            />
-          </Form.Group>
-          <br></br>
-          <Form.Group className="form-group-custom" controlId="Locate">
-            <Form.Label>Barrio:</Form.Label>
-            <Form.Control
-              name="locate"
-              type="text"
-              maxLength={50}
-              required
-              placeholder={propertie.locate}
-              value={newProperty.locate}
-              onChange={handleInput}
-            />
-          </Form.Group>
+            <Form.Group controlId="city">
+              <Form.Label>Ciudad:</Form.Label>
+              <Form.Control
+                name="city"
+                type="text"
+                maxLength={50}
+                required
+                placeholder={propertie.city}
+                value={newProperty.city}
+                onChange={handleInput}
+              />
+            </Form.Group>
+            <br></br>
+            <Form.Group controlId="Locate">
+              <Form.Label>Barrio:</Form.Label>
+              <Form.Control
+                name="locate"
+                type="text"
+                maxLength={50}
+                required
+                placeholder={propertie.locate}
+                value={newProperty.locate}
+                onChange={handleInput}
+              />
+            </Form.Group>
 
-          <br></br>
-          <Form.Group className="form-group-custom" controlId="category">
-            <Form.Label>Categoría:</Form.Label>
-            <Form.Select
-              name="category"
-              value={newProperty.category}
-              onChange={handleInput}
-              isInvalid={!!errors.category}
-              required
-            >
-              <option value="">Categoria inicial: {propertie.category} </option>
-              <option value="Casa">Casa</option>
-              <option value="Departamento">Departamento</option>
-            </Form.Select>
-            <Form.Control.Feedback type="invalid">
-              {errors.category}
-            </Form.Control.Feedback>
-          </Form.Group>
+            <br></br>
+            <Form.Group controlId="category">
+              <Form.Label>Categoría:</Form.Label>
+              <Form.Select
+                name="category"
+                value={newProperty.category}
+                onChange={handleInput}
+                isInvalid={!!errors.category}
+                required
+              >
+                <option value="">
+                  Categoria inicial: {propertie.category}{" "}
+                </option>
+                <option value="Casa">Casa</option>
+                <option value="Departamento">Departamento</option>
+              </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                {errors.category}
+              </Form.Control.Feedback>
+            </Form.Group>
 
-          <Form.Group className="form-group-custom" controlId="operation">
-            <Form.Label>Operacion:</Form.Label>
-            <Form.Select
-              name="operation"
-              value={newProperty.operation}
-              onChange={handleInput}
-              isInvalid={!!errors.operation}
-              required
-            >
-              <option value="">Operacion inicial: {propertie.operation}</option>
-              <option value="Venta">Venta</option>
-              <option value="Alquiler">Alquiler</option>
-            </Form.Select>
-            <Form.Control.Feedback type="invalid">
-              {errors.operation}
-            </Form.Control.Feedback>
-          </Form.Group>
+            <Form.Group controlId="operation">
+              <Form.Label>Operacion:</Form.Label>
+              <Form.Select
+                name="operation"
+                value={newProperty.operation}
+                onChange={handleInput}
+                isInvalid={!!errors.operation}
+                required
+              >
+                <option value="">
+                  Operacion inicial: {propertie.operation}
+                </option>
+                <option value="Venta">Venta</option>
+                <option value="Alquiler">Alquiler</option>
+              </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                {errors.operation}
+              </Form.Control.Feedback>
+            </Form.Group>
 
-          <Form.Group className="form-group-custom" controlId="enviroments">
-            <Form.Label>Ambientes:</Form.Label>
-            <Form.Select
-              name="enviroments"
-              value={newProperty.enviroments}
-              onChange={handleInput}
-              isInvalid={!!errors.enviroments}
-              required
-            >
-              <option value="">Valor inicial {propertie.enviroments}</option>
-              <option value={1}>1</option>
-              <option value={2}>2</option>
-              <option value={3}>3</option>
-              <option value={4}>4</option>
-            </Form.Select>
-            <Form.Control.Feedback type="invalid">
-              {errors.enviroments}
-            </Form.Control.Feedback>
-          </Form.Group>
+            <Form.Group controlId="enviroments">
+              <Form.Label>Ambientes:</Form.Label>
+              <Form.Select
+                name="enviroments"
+                value={newProperty.enviroments}
+                onChange={handleInput}
+                isInvalid={!!errors.enviroments}
+                required
+              >
+                <option value="">Valor inicial {propertie.enviroments}</option>
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+              </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                {errors.enviroments}
+              </Form.Control.Feedback>
+            </Form.Group>
 
-          <Form.Group className="form-group-custom" controlId="bathrooms">
-            <Form.Label>Baños:</Form.Label>
-            <Form.Select
-              name="bathrooms"
-              value={newProperty.bathrooms}
-              onChange={handleInput}
-              isInvalid={!!errors.bathrooms}
-              required
-            >
-              <option value=""> Valor inicial: {propertie.bathrooms}</option>
-              <option value={1}>1</option>
-              <option value={2}>2</option>
-              <option value={3}>3</option>
-            </Form.Select>
-            <Form.Control.Feedback type="invalid">
-              {errors.enviroments}
-            </Form.Control.Feedback>
-          </Form.Group>
+            <Form.Group controlId="bathrooms">
+              <Form.Label>Baños:</Form.Label>
+              <Form.Select
+                name="bathrooms"
+                value={newProperty.bathrooms}
+                onChange={handleInput}
+                isInvalid={!!errors.bathrooms}
+                required
+              >
+                <option value=""> Valor inicial: {propertie.bathrooms}</option>
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+              </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                {errors.enviroments}
+              </Form.Control.Feedback>
+            </Form.Group>
 
-          <Form.Group className="form-group-custom" controlId="rooms">
-            <Form.Label>Habitaciones:</Form.Label>
-            <Form.Select
-              name="rooms"
-              value={newProperty.rooms}
-              onChange={handleInput}
-              isInvalid={!!errors.rooms}
-              required
-            >
-              <option value=""> Valor inicial: {propertie.rooms}</option>
-              <option value={1}>1</option>
-              <option value={2}>2</option>
-              <option value={3}>3</option>
-            </Form.Select>
-            <Form.Control.Feedback type="invalid">
-              {errors.enviroments}
-            </Form.Control.Feedback>
-          </Form.Group>
+            <Form.Group controlId="rooms">
+              <Form.Label>Habitaciones:</Form.Label>
+              <Form.Select
+                name="rooms"
+                value={newProperty.rooms}
+                onChange={handleInput}
+                isInvalid={!!errors.rooms}
+                required
+              >
+                <option value=""> Valor inicial: {propertie.rooms}</option>
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+              </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                {errors.enviroments}
+              </Form.Control.Feedback>
+            </Form.Group>
 
-          <Form.Group className="form-group-custom" controlId="meters">
-            <Form.Label>Metros:</Form.Label>
-            <Form.Control
-              name="meters"
-              type="number"
-              required
-              placeholder={propertie.meters}
-              maxLength={10}
-              value={newProperty.meters}
-              onChange={handleInput}
-            />
-          </Form.Group>
-          <br></br>
+            <Form.Group controlId="meters">
+              <Form.Label>Metros:</Form.Label>
+              <Form.Control
+                name="meters"
+                type="number"
+                required
+                placeholder={propertie.meters}
+                maxLength={10}
+                value={newProperty.meters}
+                onChange={handleInput}
+              />
+            </Form.Group>
+            <br></br>
 
-          <Form.Group className="form-group-custom" controlId="price">
-            <Form.Label>Precio:</Form.Label>
-            <Form.Control
-              name="price"
-              type="number"
-              required
-              placeholder={propertie.price}
-              value={newProperty.price}
-              onChange={handleInput}
-            />
-          </Form.Group>
-          <br></br>
+            <Form.Group controlId="price">
+              <Form.Label>Precio:</Form.Label>
+              <Form.Control
+                name="price"
+                type="number"
+                required
+                placeholder={propertie.price}
+                value={newProperty.price}
+                onChange={handleInput}
+              />
+            </Form.Group>
+            <br></br>
 
-          <button class="btn btn-info" type="submit">
-            Guardar
-          </button>
-        </form>
-
+            <button class="btn btn-info" type="submit">
+              Guardar
+            </button>
+          </form>
+        </div>
         <Nav>
           <Nav.Link href="/properties">
             <button type="button" class="btn btn-info">

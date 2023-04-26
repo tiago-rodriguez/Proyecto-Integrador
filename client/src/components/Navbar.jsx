@@ -96,7 +96,7 @@ const NaView = () => {
 
                     <li class="nav-item">
                       <Nav className="me-auto">
-                        <Nav.Link href="/propiedades">
+                        <Nav.Link href="/">
                           <div className="list_item text-white">
                             Propiedades
                           </div>
@@ -114,14 +114,16 @@ const NaView = () => {
                     <></>
                   ) : (
                     <>
-                      <ul class="navbar-nav">
-                        <Nav className="me-auto">
-                          <Nav.Link href="/propiedades">
-                            <div className="list_item text-white">
-                              Mis citas
-                            </div>
-                          </Nav.Link>
-                        </Nav>
+                      <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                          <Nav className="me-auto">
+                            <Nav.Link href="/propiedades">
+                              <div className="list_item text-white">
+                                Mis citas
+                              </div>
+                            </Nav.Link>
+                          </Nav>
+                        </li>
 
                         <Nav className="me-auto">
                           <Nav.Link href="/profile">
@@ -163,84 +165,77 @@ const NaView = () => {
                   )}
                 </>
               ) : (
-                <div class="container-fluid nav-flex">
-                  <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                      <Nav className="me-auto">
-                        <Nav.Link href="/">
-                          <div className="list_item text-white ">Home</div>
-                        </Nav.Link>
-                      </Nav>
-                    </li>
+                <ul class="navbar-nav mx-auto">
+                  <li class="nav-item">
+                    <Nav className="me-auto">
+                      <Nav.Link href="/">
+                        <div className="list_item text-white ">Home</div>
+                      </Nav.Link>
+                    </Nav>
+                  </li>
 
-                    <li class="nav-item">
-                      <Nav className="me-auto">
-                        <Nav.Link href="/propiedades">
-                          <div className="list_item text-white">
-                            Propiedades
-                          </div>
-                        </Nav.Link>
-                      </Nav>
-                    </li>
+                  <li class="nav-item">
+                    <Nav className="me-auto">
+                      <Nav.Link href="/propiedades">
+                        <div className="list_item text-white">Propiedades</div>
+                      </Nav.Link>
+                    </Nav>
+                  </li>
 
-                    <li class="nav-item">
-                      <Nav className="me-auto">
-                        <Nav.Link href="/dates">
-                          <div className="list_item text-white">Ver Citas</div>
-                        </Nav.Link>
-                      </Nav>
-                    </li>
+                  <li class="nav-item">
+                    <Nav className="me-auto">
+                      <Nav.Link href="/dates">
+                        <div className="list_item text-white">Ver Citas</div>
+                      </Nav.Link>
+                    </Nav>
+                  </li>
 
-                    <li class="nav-item">
-                      <Nav className="me-auto">
-                        <Nav.Link href="/properties">
-                          <div className="list_item text-white ">
-                            Agregar o eliminar Propiedades
-                          </div>
-                        </Nav.Link>
-                      </Nav>
-                    </li>
+                  <li class="nav-item">
+                    <Nav className="me-auto">
+                      <Nav.Link href="/properties">
+                        <div className="list_item text-white ">
+                          Agregar o eliminar Propiedades
+                        </div>
+                      </Nav.Link>
+                    </Nav>
+                  </li>
 
-                    <li class="nav-item">
-                      <Nav className="me-auto">
-                        <Nav.Link href="/usersView">
-                          <div className="list_item text-white ">
-                            Ver perfiles
-                          </div>
-                        </Nav.Link>
-                      </Nav>
-                    </li>
+                  <li class="nav-item">
+                    <Nav className="me-auto">
+                      <Nav.Link href="/usersView">
+                        <div className="list_item text-white ">
+                          Ver perfiles
+                        </div>
+                      </Nav.Link>
+                    </Nav>
+                  </li>
 
-                    <li class="nav-item">
-                      <Nav className="me-auto">
-                        <Nav.Link href="/profile">
-                          <div className="list_item text-white ">Mi perfil</div>
-                        </Nav.Link>
-                      </Nav>
-                    </li>
-                  </ul>
+                  <li class="nav-item">
+                    <Nav className="me-auto">
+                      <Nav.Link href="/profile">
+                        <div className="list_item text-white ">Mi perfil</div>
+                      </Nav.Link>
+                    </Nav>
+                  </li>
 
-                  <div className="boton_cerrar_sesion usuario_navbar">
-                    <div className="contenedor_usuario">
-                      <h6>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          class="bi bi-person-circle"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                          <path
-                            fill-rule="evenodd"
-                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-                          />
-                        </svg>
-                        Bienvenido {user.nombre}
-                      </h6>
-                    </div>
+                  <div className="usuario_navbar">
+                    <h6>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        class="bi bi-person-circle"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                        <path
+                          fill-rule="evenodd"
+                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                        />
+                      </svg>
+                      Bienvenido {user.nombre}
+                    </h6>
                   </div>
-
                   <Link to="/">
                     <button
                       class="btn btn-outline-light"
@@ -249,7 +244,7 @@ const NaView = () => {
                       Cerrar sesion
                     </button>
                   </Link>
-                </div>
+                </ul>
               )}
             </div>
           </div>
