@@ -22,10 +22,19 @@ router.post("/new/:idProperty", validateUser, (req, res) => {
 //OBTIENE LA CITA POR EL ID
 //http://localhost:3001/api/appointments/:id
 router.get("/:id", (req, res) => {
-  const id = req.params.id;
-  Appointments.findOne({ where: { id } }).then((appointment) => {
-    res.status(200).send(appointment);
-  });
+  const userId = req.params.id;
+  console.log("este es el id", userId);
+  Appointments.findAll({ where: { userId } })
+    .then((appointment) => {
+      if (!appointment) {
+        throw new Error("La cita no fue encontrada");
+      }
+      res.status(200).send(appointment);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error interno del servidor");
+    });
 });
 
 //OBTIENE TODAS LAS CITAS
