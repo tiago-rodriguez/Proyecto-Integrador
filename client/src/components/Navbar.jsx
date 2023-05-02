@@ -96,7 +96,7 @@ const NaView = () => {
 
                     <li class="nav-item">
                       <Nav className="me-auto">
-                        <Nav.Link href="/">
+                        <Nav.Link href="/propiedades">
                           <div className="list_item text-white">
                             Propiedades
                           </div>
@@ -117,7 +117,7 @@ const NaView = () => {
                       <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
                           <Nav className="me-auto">
-                            <Nav.Link href="/propiedades">
+                            <Nav.Link href="/userDate">
                               <div className="list_item text-white">
                                 Mis citas
                               </div>
