@@ -67,28 +67,28 @@ function PropertyEdit() {
       newErrors.category = "La categoría no es válida";
     }
 
-    if (newProperty.description.length < 5) {
-      newErrors.description = "El título debe tener al menos 5 caracteres";
-    } else if (newProperty.description.length > 50) {
-      newErrors.description = "El título debe tener como máximo 50 caracteres";
-    }
+    // if (newProperty.description.length < 5) {
+    //   newErrors.description = "El título debe tener al menos 5 caracteres";
+    // } else if (newProperty.description.length > 50) {
+    //   newErrors.description = "El título debe tener como máximo 50 caracteres";
+    // }
 
-    if (!newProperty.operation) {
-      newErrors.operation = "Debe seleccionar una operación";
-    } else if (
-      newProperty.operation !== "Venta" &&
-      newProperty.operation !== "Alquiler"
-    ) {
-      newErrors.operation = "La operación no es válida";
-    }
+    // if (!newProperty.operation) {
+    //   newErrors.operation = "Debe seleccionar una operación";
+    // } else if (
+    //   newProperty.operation !== "Venta" &&
+    //   newProperty.operation !== "Alquiler"
+    // ) {
+    //   newErrors.operation = "La operación no es válida";
+    // }
 
-    if (!newProperty.enviroments) {
-      newErrors.enviroments = "Debe seleccionar algún valor";
-    }
+    // if (!newProperty.enviroments) {
+    //   newErrors.enviroments = "Debe seleccionar algún valor";
+    // }
 
-    if (!newProperty.bathrooms) {
-      newErrors.bathrooms = "Debe seleccionar algún valor";
-    }
+    // if (!newProperty.bathrooms) {
+    //   newErrors.bathrooms = "Debe seleccionar algún valor";
+    // }
 
     // Validar los demás campos del formulario
     // ...
@@ -144,6 +144,7 @@ function PropertyEdit() {
                 onChange={handleInput}
               />
             </Form.Group>
+            {errors.title && <span className="error">{errors.title}</span>}
             <br></br>
             <Form.Group controlId="description">
               <Form.Label>Descripción:</Form.Label>
@@ -223,7 +224,7 @@ function PropertyEdit() {
                 required
               >
                 <option value="">
-                  Categoria inicial: {propertie.category}{" "}
+                  Categoria inicial: {propertie.category}
                 </option>
                 <option value="Casa">Casa</option>
                 <option value="Departamento">Departamento</option>
